@@ -1,3 +1,9 @@
 <h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+{{#leaflet-map lat=lat lng=lng zoom=zoom id="map"}}
+  {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{#each model as |place|}}
+	  {{#marker-layer lat=place.latitude lng=place.longitude}}
+	    <h3>{{place.title}}</h3>
+	  {{/marker-layer}}
+  {{/each}}
+{{/leaflet-map}}
