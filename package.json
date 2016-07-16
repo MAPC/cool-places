@@ -39,5 +39,8 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-leaflet": "2.2.7"
+  },
+  "dependencies": {
+    "turf": "^3.0.14"
   }
 }
