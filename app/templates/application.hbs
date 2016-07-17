@@ -1,9 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
-{{#leaflet-map lat=lat lng=lng zoom=zoom id="map"}}
+<h2 id="title">Cool Places</h2>
+<button{{action 'getUserLocation'}}>Find Cool Places</button>
+{{nearest-list nearest=nearest}}
+{{#leaflet-map center=userLocation zoom=zoom id="map"}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model as |place|}}
 	  {{#marker-layer lat=place.latitude lng=place.longitude}}
 	    <h3>{{place.title}}</h3>
 	  {{/marker-layer}}
   {{/each}}
+
+  {{#if userLocation}}
+    {{#marker-layer location=userLocation}}
+      Here
+    {{/marker-layer}}
+  {{/if}}
 {{/leaflet-map}}
