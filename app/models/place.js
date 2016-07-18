@@ -13,5 +13,8 @@ export default DS.Model.extend({
   title: function() {
   	return this.get('properties.title');
   }.property('properties.title'),
+  ask: function() {
+    return this.get('properties.ask')
+  }.property('properties.ask'),
   nearby: DS.attr('boolean', { defaultValue: false })
 });

@@ -1,24 +1,31 @@
 <h2 id="title">Cool Places</h2>
 <button{{action 'getUserLocation'}}>Find Cool Places</button>
+{{outlet}}
 {{nearest-list nearest=nearest}}
-{{#leaflet-map id="map" bounds=mapBounds}}
+{{#leaflet-map id="map" bounds=mapBounds scrollWheelZoom=false}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model as |place|}}
     {{#if place.nearby}}
-      {{#marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker}}
-        <h3>{{place.title}}</h3>
-      {{/marker-layer}}
+      {{marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker onClick=(action 'viewPlace' place)}}
     {{else}}
-      {{#marker-layer lat=place.latitude lng=place.longitude}}
-        <h3>{{place.title}}</h3>
-      {{/marker-layer}}
+      {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}
     {{/if}}
 
   {{/each}}
 
   {{#if userLocation}}
-    {{#marker-layer location=userLocation icon=callOutMarker}}
-      Here
-    {{/marker-layer}}
+    {{marker-layer location=userLocation icon=callOutMarker}}
   {{/if}}
 {{/leaflet-map}}
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2> Why so hot?</h2>
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2> What is a heat wave?</h2>

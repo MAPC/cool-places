@@ -6,13 +6,12 @@ export default Ember.Controller.extend({
 	lng: -70.927705,
 	zoom: 12,
   userLocation: [42.426092,-70.927705],
+  classNames: ['main-content'],
   callOutMarker: function() {
     return L.icon({
       iconUrl: 'marker-icon-red.png',
       iconRetinaUrl: 'marker-icon-red.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 0],
-      popupAnchor: [-3, -76]
+      iconSize: [25, 41]
     });
     
   }.property(),
@@ -25,6 +24,9 @@ export default Ember.Controller.extend({
         this.set('userLocation', currentLocation);
         this.getNearbyPlaces();
       });
+    },
+    viewPlace: function(place) {
+      this.transitionToRoute('places.place', place);
     }
   },
 
@@ -45,7 +47,7 @@ export default Ember.Controller.extend({
         geometry: model.get('geometry'),
         properties: model.get('properties')
       });
-      geojson[index].properties.model_id = model.get('id');
+      geojson[index].properties.model_id = parseInt(model.get('id'));
     });
 
     return L.geoJson(geojson);
@@ -58,11 +60,12 @@ export default Ember.Controller.extend({
     });
     
     var nearestIDs = markersArray.map((marker) => {
-      console.log(marker);
       return marker.feature.properties.model_id;
     });
 
-    console.log(this.get('model').filterProperty('place_id' , nearestIDs.toString()));
+    nearestIDs.forEach((id) => {
+      this.store.peekRecord('place', id).set('nearby', true);
+    });
 
     return L.featureGroup(markersArray);
   }.property('nearest'),
@@ -75,7 +78,7 @@ export default Ember.Controller.extend({
     var index = this.get('geoJsonIndex');
     var nearestMax = this.get('nearestMax');
     var nearest = index.nearest(L.latLng(this.get('userLocation')), nearestMax);
-    
+    console.log(nearest);
     this.set('nearest', nearest);
   }
 });
