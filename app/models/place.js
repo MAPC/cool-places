@@ -12,5 +12,6 @@ export default DS.Model.extend({
   }.property('geometry.coordinates.@'),
   title: function() {
   	return this.get('properties.title');
-  }.property('properties.title')
+  }.property('properties.title'),
+  nearby: DS.attr('boolean', { defaultValue: false })
 });

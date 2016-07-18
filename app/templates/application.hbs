@@ -1,16 +1,23 @@
 <h2 id="title">Cool Places</h2>
 <button{{action 'getUserLocation'}}>Find Cool Places</button>
 {{nearest-list nearest=nearest}}
-{{#leaflet-map center=userLocation zoom=zoom id="map"}}
+{{#leaflet-map id="map" bounds=mapBounds}}
   {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
   {{#each model as |place|}}
-	  {{#marker-layer lat=place.latitude lng=place.longitude}}
-	    <h3>{{place.title}}</h3>
-	  {{/marker-layer}}
+    {{#if place.nearby}}
+      {{#marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker}}
+        <h3>{{place.title}}</h3>
+      {{/marker-layer}}
+    {{else}}
+      {{#marker-layer lat=place.latitude lng=place.longitude}}
+        <h3>{{place.title}}</h3>
+      {{/marker-layer}}
+    {{/if}}
+
   {{/each}}
 
   {{#if userLocation}}
-    {{#marker-layer location=userLocation}}
+    {{#marker-layer location=userLocation icon=callOutMarker}}
       Here
     {{/marker-layer}}
   {{/if}}
