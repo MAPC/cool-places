@@ -1,16 +1,24 @@
-Places Parent {{outlet}}
-{{#leaflet-map id="map" bounds=mapBounds scrollWheelZoom=false}}
-  {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-  {{#each model as |place|}}
-    {{#if place.nearby}}
-      {{marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker onClick=(action 'viewPlace' place)}}
-    {{else}}
-      {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}
+<div class="cool-places">
+  <h2 id="title">Keep Cool</h2>
+  <button class="ui button" {{action 'getUserLocation'}}>Find Cool Places</button>
+  {{#leaflet-map id="map" bounds=mapBounds scrollWheelZoom=false}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+    {{#each model as |place|}}
+      {{#if place.nearby}}
+        {{marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker onClick=(action 'viewPlace' place)}}
+      {{else}}
+        {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}
+      {{/if}}
+
+    {{/each}}
+
+    {{#if userLocation}}
+      {{marker-layer location=userLocation icon=callOutMarker}}
     {{/if}}
 
-  {{/each}}
-
-  {{#if userLocation}}
-    {{marker-layer location=userLocation icon=callOutMarker}}
-  {{/if}}
-{{/leaflet-map}}
+  {{/leaflet-map}}
+  {{nearest-list nearest=nearest}}
+  <div>
+    {{outlet}}
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  mapRouter: Ember.inject.service(),
   geolocation: Ember.inject.service(),
   lat: 42.426092,
   lng: -70.927705,
@@ -31,11 +32,13 @@ export default Ember.Controller.extend({
   },
 
   mapBounds: function() {
+    console.log(this.get('mapRouter.bounds'));
     if (!this.get('nearest')) {
       return this.get('geojson').getBounds();  
     } else {
       return this.get('nearestMarkersFeatureGroup').getBounds();
     }
+
   }.property('geojson,nearest'),
 
   geojson: function() {

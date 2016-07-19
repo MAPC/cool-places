@@ -44,7 +44,8 @@
     "ember-export-application-global": "^1.0.4",
     "ember-leaflet": "2.2.7",
     "ember-truth-helpers": "1.2.0",
-    "fastboot": "0.0.2"
+    "fastboot": "0.0.2",
+    "semantic-ui-ember": "1.0.0"
   },
   "dependencies": {
     "leaflet": "^0.7.7",
