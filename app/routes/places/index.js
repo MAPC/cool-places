@@ -3,9 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
   model() {
+    console.log("called");
     return this.get('store').findAll('place');
-  },
+  }, 
   setupController: function(controller, model) {
+    console.log("called", model);
     var geojson = this.geojson(model);
     var mapRouter = this.get('mapRouter');
     mapRouter.set('bounds', geojson.getBounds());

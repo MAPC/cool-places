@@ -3,10 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   mapRouter: Ember.inject.service(),
   geolocation: Ember.inject.service(),
-  lat: 42.426092,
-  lng: -70.927705,
-  zoom: 12,
-  userLocation: [42.426092,-70.927705],
+  // userLocation: [42.426092,-70.927705],
   classNames: ['main-content'],
   callOutMarker: function() {
     return L.icon({
@@ -16,72 +13,73 @@ export default Ember.Controller.extend({
     });
     
   }.property(),
-  nearestMax: 5,
 
   actions: {
-    getUserLocation: function() {
-      this.get('geolocation').getLocation().then((geoObject) => {
-        var currentLocation = this.get('geolocation').get('currentLocation');
-        this.set('userLocation', currentLocation);
-        this.getNearbyPlaces();
-      });
-    },
+
     viewPlace: function(place) {
       this.transitionToRoute('places.place', place);
     }
   },
 
+  center: function() {
+    return this.get('mapRouter.center');
+  }.property('mapRouter.center'),
+  zoom: function() {
+    return this.get('mapRouter.zoom');
+  }.property('mapRouter.zoom'),
+
   mapBounds: function() {
+    // console.log(this.get('mapRouter.bounds'));
+    // if (!this.get('nearest')) {
+    //   return this.get('geojson').getBounds();  
+    // } else {
+    //   return this.get('nearestMarkersFeatureGroup').getBounds();
+    // }
     console.log(this.get('mapRouter.bounds'));
-    if (!this.get('nearest')) {
-      return this.get('geojson').getBounds();  
-    } else {
-      return this.get('nearestMarkersFeatureGroup').getBounds();
-    }
+    return this.get('mapRouter.bounds');
+  }.property('mapRouter.bounds'),
 
-  }.property('geojson,nearest'),
+  // geojson: function() {
+  //   let geojson = [];
 
-  geojson: function() {
-    let geojson = [];
+  //   this.get('model').forEach((model, index) => {
+  //     geojson.push({
+  //       type: model.get('type'),
+  //       geometry: model.get('geometry'),
+  //       properties: model.get('properties')
+  //     });
+  //     geojson[index].properties.model_id = parseInt(model.get('id'));
+  //   });
 
-    this.get('model').forEach((model, index) => {
-      geojson.push({
-        type: model.get('type'),
-        geometry: model.get('geometry'),
-        properties: model.get('properties')
-      });
-      geojson[index].properties.model_id = parseInt(model.get('id'));
-    });
+  //   return L.geoJson(geojson);
+  // }.property('model'),
 
-    return L.geoJson(geojson);
-  }.property('model'),
-
-  nearestMarkersFeatureGroup: function() {
-    var nearest = this.get('nearest');
-    var markersArray = nearest.map((marker) => {
-      return marker.layer;
-    });
+  // nearestMarkersFeatureGroup: function() {
+  //   var nearest = this.get('nearest');
+  //   var markersArray = nearest.map((marker) => {
+  //     return marker.layer;
+  //   });
     
-    var nearestIDs = markersArray.map((marker) => {
-      return marker.feature.properties.model_id;
-    });
+  //   var nearestIDs = markersArray.map((marker) => {
+  //     return marker.feature.properties.model_id;
+  //   });
 
-    nearestIDs.forEach((id) => {
-      this.store.peekRecord('place', id).set('nearby', true);
-    });
+  //   nearestIDs.forEach((id) => {
+  //     this.store.peekRecord('place', id).set('nearby', true);
+  //   });
 
-    return L.featureGroup(markersArray);
-  }.property('nearest'),
+  //   return L.featureGroup(markersArray);
+  // }.property('nearest'),
 
-  geoJsonIndex: function() {
-    return leafletKnn(this.get('geojson'));
-  }.property('this.geojson'),
+  // geoJsonIndex: function() {
+  //   return leafletKnn(this.get('geojson'));
+  // }.property('this.geojson'),
 
-  getNearbyPlaces() {
-    var index = this.get('geoJsonIndex');
-    var nearestMax = this.get('nearestMax');
-    var nearest = index.nearest(L.latLng(this.get('userLocation')), nearestMax);
-    console.log(nearest);
-    this.set('nearest', nearest);
-  }
+  // getNearbyPlaces() {
+  //   var index = this.get('geoJsonIndex');
+  //   var nearestMax = this.get('nearestMax');
+  //   var nearest = index.nearest(L.latLng(this.get('userLocation')), nearestMax);
+  //   console.log(nearest);
+  //   this.set('nearest', nearest);
+  // }
 });
