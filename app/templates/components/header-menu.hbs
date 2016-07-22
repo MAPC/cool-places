@@ -3,9 +3,9 @@
     Keep Cool
   {{/link-to}}
   <div class="right menu">
-    <div class="item">
-      <a><i {{action 'openModal'}} class="content layout icon"></i></a>
-    </div>
+    <a {{action 'openModal' on='tap'}} class="item">
+      <i class="content large layout icon"></i>
+    </a>
   </div>
 </div>
 {{#ui-modal name="profile" class="ui basic modal"}}

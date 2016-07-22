@@ -2,11 +2,14 @@
   <div class="ui container splash-portal">
     <h1>Keep Cool</h1>
     <p>Find local places to keep cool this summer</p>
-
-    {{#link-to 'places.nearby' class="ui button"}}
-      <i class="navigate icon"></i>
-      Find places near me
-    {{/link-to}}
+    {{#if geolocation.disabled}}
+      Location Services Disabled. Select a city.
+    {{else}}
+      {{#link-to 'places.nearby' class="ui button"}}
+        <i class="location arrow icon"></i>
+        Find places near me
+      {{/link-to}}
+    {{/if}}
   </div>
 </div>
 <div class="ui center aligned vertical-segment">

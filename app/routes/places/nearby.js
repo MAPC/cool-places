@@ -17,7 +17,12 @@ export default Ember.Route.extend({
     if(this.get('geolocation.currentLocation')) {
       var currentLocation = this.get('geolocation.currentLocation');
     } else {
-      var currentLocation = this.get('geolocation').getLocation();  
+      var currentLocation = this.get('geolocation').getLocation().then((object) => {
+      }, (error) => { 
+                      alert("Location services disabled"); 
+                      this.transitionTo('index'); 
+                      this.get('geolocation').set('disabled', true);
+                    });  
     }
     
     return Ember.RSVP.hash({
