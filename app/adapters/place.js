@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.CartoDBAdapter.extend({
-    accountName: 'wilburnforce'
+    accountName: 'arouault',
+    tablePrefix: 'heatwaveapp'
 });

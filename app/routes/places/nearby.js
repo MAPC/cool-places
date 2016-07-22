@@ -8,16 +8,23 @@ export default Ember.Route.extend({
   geolocation: Ember.inject.service(),
   mapRouter: Ember.inject.service(),
 
-  nearestMax: 5,
-  userLocation: [42.426092,-70.927705],
+  nearestMax: 15,
+  // userLocation: [42.426092,-70.927705],
   model(params) {
-    let places = this.get('store').findAll('place');
-    let currentLocation = this.get('geolocation').getLocation();
+    let places = this.modelFor('places');
+    let mapRouter = this.get('mapRouter');
+
+    if(this.get('geolocation.currentLocation')) {
+      var currentLocation = this.get('geolocation.currentLocation');
+    } else {
+      var currentLocation = this.get('geolocation').getLocation();  
+    }
+    
 
     return Ember.RSVP.hash({
       places,
       currentLocation
-    })
+    });
     // this.get('geolocation').getLocation(); 
     // RSVP hash sets up the promisees for the model AND the get location property
     // The template and leaflet won't update until the promises are resolved
@@ -27,6 +34,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     let geojson = [];
+    // let model = this.modelFor('places');
     // let models = model || [];
 
     // reshape data in the component - move to a component 
@@ -44,7 +52,7 @@ export default Ember.Route.extend({
     
     this.set('geojson', L.geoJson(geojson));
     controller.set('model', model);
-    this.getUserLocation();
+    this.nearest();
   },
 
 
@@ -64,25 +72,14 @@ export default Ember.Route.extend({
     return L.featureGroup(markersArray).getBounds();
 
     // definitely don't use this observer
-  }.observes('userLocation'),
+  },
 
   getNearbyPlaces(geojson) {
     var index = leafletKnn(geojson);
     // make as a CONST in the component 
     var nearestMax = this.get('nearestMax');
-    console.log(this.get('userLocation'));
-    var nearest = index.nearest(L.latLng(this.get('userLocation')), nearestMax);
+
+    var nearest = index.nearest(L.latLng(this.get('geolocation.currentLocation')), nearestMax);
     return nearest;
-  },
-
-
-  // make this happen only once 
-  // set this on the geolocation service as a property
-  // just use the services currentLocation property directly when needed
-  getUserLocation: function() {
-    this.get('geolocation').getLocation().then((geoObject) => {
-      var currentLocation = this.get('geolocation').get('currentLocation');
-      this.set('userLocation', currentLocation);
-    });
   }
 });

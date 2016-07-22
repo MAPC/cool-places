@@ -7,7 +7,8 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com",
-                              'img-src': "'self' http://*.basemaps.cartocdn.com/" },
+                              'img-src': "'self' http://*.basemaps.cartocdn.com/ data:",
+                              'font-src': "'self' data:" },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -42,6 +43,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.locationType = 'hash';
+    ENV.baseURL = '/cool-places/';
 
   }
 

@@ -10,11 +10,11 @@ export default DS.Model.extend({
   longitude: function() {
   	return this.get('geometry.coordinates')[0];
   }.property('geometry.coordinates.@'),
-  title: function() {
-  	return this.get('properties.title');
-  }.property('properties.title'),
-  ask: function() {
-    return this.get('properties.ask')
-  }.property('properties.ask'),
+  label: function() {
+  	return this.get('properties.label');
+  }.property('properties.label'),
+  place_type: function() {
+    return this.get('properties.type')
+  }.property('properties.type'),
   nearby: DS.attr('boolean', { defaultValue: false })
 });

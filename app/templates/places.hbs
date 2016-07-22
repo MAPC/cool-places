@@ -1,9 +1,10 @@
 <div class="cool-places">
   {{#link-to 'places'}}<h2 id="title">Keep Cool</h2>{{/link-to}}
   {{#link-to 'places.nearby'}}Find Cool Places{{/link-to}}
-  {{#map-wrapper}}
-    {{#leaflet-map id="map" scrollWheelZoom=false bounds=mapBounds}}
-      {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+  {{#leaflet-map id="map" scrollWheelZoom=false bounds=mapBounds}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+    {{#marker-cluster-layer}}
       {{#each model as |place|}}
         {{#if place.nearby}}
           {{marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker onClick=(action 'viewPlace' place)}}
@@ -12,12 +13,13 @@
         {{/if}}
 
       {{/each}}
+    {{/marker-cluster-layer}}
+    
+    {{#if userLocation}}
+      {{marker-layer location=userLocation icon=callOutMarker}}
+    {{/if}}
+  {{/leaflet-map}}
 
-      {{#if userLocation}}
-        {{marker-layer location=userLocation icon=callOutMarker}}
-      {{/if}}
-    {{/leaflet-map}}
-  {{/map-wrapper}}
   {{nearest-list nearest=nearest}}
   <div>
     {{outlet}}
