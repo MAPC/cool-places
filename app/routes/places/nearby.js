@@ -11,10 +11,17 @@ export default Ember.Route.extend({
   nearestMax: 5,
   userLocation: [42.426092,-70.927705],
   model(params) {
+    let places = this.get('store').findAll('place');
+    let currentLocation = this.get('geolocation').getLocation();
+
+    return Ember.RSVP.hash({
+      places,
+      currentLocation
+    })
     // this.get('geolocation').getLocation(); 
     // RSVP hash sets up the promisees for the model AND the get location property
     // The template and leaflet won't update until the promises are resolved
-    return this.get('store').findAll('place');
+    // return this.get('store').findAll('place');
 
   },
 
@@ -26,7 +33,7 @@ export default Ember.Route.extend({
     // Ember computed map 
 
      // move into a component
-    models.forEach((model, index) => {
+    model.places.forEach((model, index) => {
       geojson.push({
         type: model.get('type'),
         geometry: model.get('geometry'),
@@ -50,14 +57,6 @@ export default Ember.Route.extend({
       return marker.layer;
     });
     
-    var nearestIDs = markersArray.map((marker) => {
-      return marker.feature.properties.model_id;
-    });
-
-    nearestIDs.forEach((id) => {
-      this.store.peekRecord('place', id).set('nearby', true);
-    });
-
     var nearestMarkers = L.featureGroup(markersArray).getBounds();
 
     mapRouter.set('bounds', nearestMarkers);
@@ -71,6 +70,7 @@ export default Ember.Route.extend({
     var index = leafletKnn(geojson);
     // make as a CONST in the component 
     var nearestMax = this.get('nearestMax');
+    console.log(this.get('userLocation'));
     var nearest = index.nearest(L.latLng(this.get('userLocation')), nearestMax);
     return nearest;
   },

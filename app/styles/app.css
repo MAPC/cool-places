@@ -51,3 +51,7 @@ html,body {
   background-color: white;
   height: 50%;
 }
+
+.top-level {
+  height: 100%;
+}
