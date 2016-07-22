@@ -10,7 +10,24 @@ html,body {
 
 #map {
 	width:100%;
-	height: 85%;
+	height: 100%;
+}
+
+.leaflet-top {
+  margin-top: 50px;
+}
+
+.vertical-segment {
+  height: calc(100vh);
+}
+/*
+.main-app {
+  padding-top: 22px;
+}
+*/
+
+.ui.active.modal {
+  height: 100%;
 }
 
 .nearby-places-list {
@@ -37,7 +54,7 @@ html,body {
   height: calc(100vh);
 }
 
-.cool-places * {
+.cool-places h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
@@ -52,4 +69,13 @@ html,body {
 
 .top-level {
   height: 100%;
+}
+
+.ui.modal > .actions {
+  text-align: left;
+}
+
+.splash-portal {
+  height: calc(100vh);
+  padding-top: 50px;
 }

@@ -20,7 +20,6 @@ export default Ember.Route.extend({
       var currentLocation = this.get('geolocation').getLocation();  
     }
     
-
     return Ember.RSVP.hash({
       places,
       currentLocation

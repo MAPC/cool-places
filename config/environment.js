@@ -8,7 +8,8 @@ module.exports = function(environment) {
     locationType: 'auto',
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com",
                               'img-src': "'self' http://*.basemaps.cartocdn.com/ data:",
-                              'font-src': "'self' data:" },
+                              'font-src': "'self' data:",
+                              'style-src': "'self' 'unsafe-inline'" },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

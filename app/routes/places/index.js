@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
   model() {
-    // console.log("called");
+    
     return this.modelFor('places');
   }, 
   setupController: function(controller, model) {

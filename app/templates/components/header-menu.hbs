@@ -1,0 +1,22 @@
+<div class="ui fixed menu">
+  {{#link-to 'index' class="item"}}
+    Keep Cool
+  {{/link-to}}
+  <div class="right menu">
+    <div class="item">
+      <a><i {{action 'openModal'}} class="content layout icon"></i></a>
+    </div>
+  </div>
+</div>
+{{#ui-modal name="profile" class="ui basic modal"}}
+  <i class="close icon"></i>
+  <div class="ui fluid inverted vertical actions menu">
+    <a class="item">Stay safe in the heat</a>
+    <a class="item">Why is it so hot?</a>
+    <a class="item">Resources for keeping cool</a>
+    {{#link-to 'places.nearby' class='cancel item'}}Find cool places{{/link-to}}
+    <a class="item">Home</a>
+    <a class="item">About</a>
+  </div>
+{{/ui-modal}}
+{{yield}}

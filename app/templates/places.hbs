@@ -1,7 +1,4 @@
 <div class="cool-places">
-  {{#link-to 'places'}}<h2 id="title">Keep Cool</h2>{{/link-to}}
-  {{#link-to 'places.nearby'}}Find Cool Places{{/link-to}}
-
   {{#leaflet-map id="map" scrollWheelZoom=false bounds=mapBounds}}
     {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
     {{#marker-cluster-layer}}
