@@ -5,6 +5,7 @@ export default Ember.Route.extend({
   model() {
     return this.get('store').findAll('place');
   },
+  // this.modelFor('places')
   setupController: function(controller, model) {
     var geojson = this.geojson(model);
     var mapRouter = this.get('mapRouter');
