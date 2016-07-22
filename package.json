@@ -1,0 +1,11 @@
+{
+  "dependencies": {},
+  "fastboot": {
+    "moduleWhitelist": [],
+    "manifest": {
+      "appFile": "fastboot/cool-places-77956591981ded50ab8a6759e6e2f1ba.js",
+      "vendorFile": "fastboot/vendor-f204d80935d6732910b2b01e8a1ba8a2.js",
+      "htmlFile": "index.html"
+    }
+  }
+}
