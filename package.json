@@ -3,8 +3,8 @@
   "fastboot": {
     "moduleWhitelist": [],
     "manifest": {
-      "appFile": "fastboot/cool-places-c6cca30d6d7b7e895cf860a9ec16aba1.js",
-      "vendorFile": "fastboot/vendor-f204d80935d6732910b2b01e8a1ba8a2.js",
+      "appFile": "fastboot/cool-places-02157dcea5fee0a19682c7e96dd25e06.js",
+      "vendorFile": "fastboot/vendor-a01a5db45a4c37037f8e341bd8f7bc77.js",
       "htmlFile": "index.html"
     }
   }
