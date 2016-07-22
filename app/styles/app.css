@@ -14,11 +14,15 @@ html,body {
 }
 
 .leaflet-top {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .vertical-segment {
   height: calc(100vh);
+}
+
+.ui.fixed.menu{
+  height: 65px;
 }
 /*
 .main-app {
@@ -77,5 +81,5 @@ html,body {
 
 .splash-portal {
   height: calc(100vh);
-  padding-top: 50px;
+  padding-top: 65px;
 }
