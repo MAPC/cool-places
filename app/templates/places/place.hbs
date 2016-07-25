@@ -1,4 +1,13 @@
 <div class="place-info">
-  {{model.label}}: {{model.place_type}}
-  {{outlet}}
+  <a href="https://www.google.com/maps/dir//{{model.latitude}},+{{model.longitude}}" target="_blank"><i class="map icon big circular inverted google-directions-button"></i></a>
+  <div class="ui container">
+    <br />
+    <h1>{{model.label}}</h1>
+    {{model.place_type}} · {{model.address}}, {{model.town}}
+    <div class="ui divider">
+    </div>
+    {{#if model.phone}}
+      <a href="tel:{{model.phone}}"><i class="volume control phone big icon"></i> Call: {{model.phone}}</a>
+    {{/if}}
+  </div>
 </div>

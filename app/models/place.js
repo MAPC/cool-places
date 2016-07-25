@@ -16,5 +16,14 @@ export default DS.Model.extend({
   place_type: function() {
     return this.get('properties.type');
   }.property('properties.type'),
-  nearby: DS.attr('boolean', { defaultValue: false })
+  nearby: DS.attr('boolean', { defaultValue: false }),
+  address: function() {
+    return this.get('properties.true_address');
+  }.property('properties.true_address'),
+  town: function() {
+    return this.get('properties.town');
+  }.property('properties.town'),
+  phone: function() {
+    return this.get('properties.phone');
+  }.property('properties.phone')
 });

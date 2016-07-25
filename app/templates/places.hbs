@@ -1,7 +1,6 @@
 <div class="cool-places">
   {{#leaflet-map id="map" scrollWheelZoom=false bounds=mapBounds fitBoundsOptions=fitBoundsOptions panning=false}}
     {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-    {{!-- {{#marker-cluster-layer}} --}}
       {{#each model as |place|}}
         {{#if place.nearby}}
           {{marker-layer lat=place.latitude lng=place.longitude icon=callOutMarker onClick=(action 'viewPlace' place)}}
@@ -10,8 +9,6 @@
         {{/if}}
 
       {{/each}}
-    {{!-- {{/marker-cluster-layer}} --}}
-    
     {{#if geolocation.currentLocation}}
       {{marker-layer location=geolocation.currentLocation icon=callOutMarker}}
     {{/if}}

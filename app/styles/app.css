@@ -18,7 +18,7 @@ html,body {
 }
 
 .vertical-segment {
-  height: calc(100vh);
+  height: calc(75vh);
 }
 
 .ui.fixed.menu{
@@ -69,6 +69,7 @@ html,body {
   width: 100%;
   background-color: white;
   height: 50%;
+  box-shadow: 0px -3px 15px #888
 }
 
 .top-level {
@@ -80,6 +81,16 @@ html,body {
 }
 
 .splash-portal {
-  height: calc(100vh);
+  height: calc(75vh);
   padding-top: 65px;
+}
+
+.ui.dropdown .menu > .item {
+  font-size: 1.25em;
+}
+
+.google-directions-button {
+  right: 10px; 
+  position: absolute;
+  top: -30px;
 }

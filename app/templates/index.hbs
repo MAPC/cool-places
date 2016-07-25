@@ -4,14 +4,14 @@
     <p>Find local places to keep cool this summer</p>
     {{#if geolocation.disabled}}
     {{else}}
-      {{#link-to 'places.nearby' class="ui button"}}
+      {{#link-to 'places.nearby' class="ui fluid button"}}
         <i class="location arrow icon"></i>
         Find places near me
       {{/link-to}}
     {{/if}}
-    <div class="ui divider"></div>
-    {{#ui-dropdown class="inverted selection" onChange=(action 'toTown')}}
-      <div class="default text">Select an item</div>
+    <div class="ui horizontal inverted divider">OR</div>
+    {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
+      <div class="default text">Select an area</div>
       <i class="dropdown icon"></i>
       <div class="menu">
       {{#each model as |town|}}
