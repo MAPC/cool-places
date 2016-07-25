@@ -3,13 +3,24 @@
     <h1>Keep Cool</h1>
     <p>Find local places to keep cool this summer</p>
     {{#if geolocation.disabled}}
-      Location Services Disabled. Select a city.
     {{else}}
       {{#link-to 'places.nearby' class="ui button"}}
         <i class="location arrow icon"></i>
         Find places near me
       {{/link-to}}
     {{/if}}
+    <div class="ui divider"></div>
+    {{#ui-dropdown class="inverted selection"}}
+      <div class="default text">Select an item</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+      {{#each model as |town|}}
+        <div class="item" data-id="{{town.id}}">
+          {{town.name}}
+        </div>
+      {{/each}}
+      </div>
+    {{/ui-dropdown}}
   </div>
 </div>
 <div class="ui center aligned vertical-segment">

@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   geolocation: Ember.inject.service(),
   mapRouter: Ember.inject.service(),
 
-  nearestMax: 15,
+  nearestMax: 5,
   // userLocation: [42.426092,-70.927705],
   model(params) {
     let places = this.modelFor('places');
@@ -79,6 +79,11 @@ export default Ember.Route.extend({
   },
 
   getNearbyPlaces(geojson) {
+    geojson.addData({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: this.get('geolocation.currentLocation') },
+        properties: {}
+      });
     var index = leafletKnn(geojson);
     // make as a CONST in the component 
     var nearestMax = this.get('nearestMax');

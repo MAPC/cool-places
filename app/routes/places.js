@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
-  model() {
+  model(params) {
     return this.get('store').findAll('place');
   },
   // this.modelFor('places')

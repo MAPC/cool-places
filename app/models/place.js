@@ -14,7 +14,7 @@ export default DS.Model.extend({
   	return this.get('properties.label');
   }.property('properties.label'),
   place_type: function() {
-    return this.get('properties.type')
+    return this.get('properties.type');
   }.property('properties.type'),
   nearby: DS.attr('boolean', { defaultValue: false })
 });
