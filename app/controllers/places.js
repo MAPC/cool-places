@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   mapRouter: Ember.inject.service(),
   geolocation: Ember.inject.service(),
-  fitBoundsOptions: "peanut butter",
+  
   // userLocation: [42.426092,-70.927705],
   classNames: ['main-content'],
   callOutMarker: function() {
@@ -31,5 +31,9 @@ export default Ember.Controller.extend({
 
   mapBounds: function() {
     return this.get('mapRouter.bounds');
-  }.property('mapRouter.bounds')
+  }.property('mapRouter.bounds'),
+  fitBoundsOptions: function() {
+    console.log("fired");
+    return this.get('mapRouter.boundsOptions');
+  }.property('mapRouter.boundsOptions.{maxZoom,paddingBottomRight.@each}')
 });

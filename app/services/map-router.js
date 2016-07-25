@@ -31,8 +31,5 @@ export default Ember.Service.extend({
 
     var nearest = index.nearest(L.latLng(this.get('geolocation.currentLocation')), nearestMax);
     return nearest;
-  },
-  nearest: function() {
-    // alert("test");
   }
 });

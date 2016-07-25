@@ -42,15 +42,21 @@ html,body {
   width: 100%;
 }
 
+.leaflet-top, .leaflet-left {
+  z-index: 99;
+}
+
 .leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
     width: 50px;
     height: 50px;
     line-height: 53px;
+    z-index: 99;
 }
 
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {
     font: bold 24px 'Lucida Console', Monaco, monospace;
     text-indent: 1px;
+    z-index: 99;
 }
 
 .cool-places {
@@ -93,4 +99,5 @@ html,body {
   right: 10px; 
   position: absolute;
   top: -30px;
+  box-shadow: 0px -3px 15px #888 !important;
 }
