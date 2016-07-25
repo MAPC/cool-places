@@ -10,12 +10,12 @@
       {{/link-to}}
     {{/if}}
     <div class="ui divider"></div>
-    {{#ui-dropdown class="inverted selection"}}
+    {{#ui-dropdown class="inverted selection" onChange=(action 'toTown')}}
       <div class="default text">Select an item</div>
       <i class="dropdown icon"></i>
       <div class="menu">
       {{#each model as |town|}}
-        <div class="item" data-id="{{town.id}}">
+        <div class="item" data-id="{{town.name}}">
           {{town.name}}
         </div>
       {{/each}}

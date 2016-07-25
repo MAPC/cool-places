@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   mapRouter: Ember.inject.service(),
   geolocation: Ember.inject.service(),
+  fitBoundsOptions: "peanut butter",
   // userLocation: [42.426092,-70.927705],
   classNames: ['main-content'],
   callOutMarker: function() {
