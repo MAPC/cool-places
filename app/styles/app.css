@@ -24,6 +24,11 @@ html,body {
 .ui.fixed.menu{
   height: 65px;
 }
+
+.black {
+  background-color: #000;
+  color: #FFF;
+}
 /*
 .main-app {
   padding-top: 22px;

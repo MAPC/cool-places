@@ -13,6 +13,11 @@ Router.map(function() {
       this.route('town', { path: ':town_name' });
     });
   });
+  this.route('info', function() {
+    this.route('about');
+    this.route('heat-safety');
+    this.route('why-is-it-so-hot');
+  })
 });
 
 export default Router;

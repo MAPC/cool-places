@@ -11,12 +11,11 @@
 {{#ui-modal name="profile" class="ui basic modal"}}
   <i class="close icon"></i>
   <div class="ui fluid inverted vertical actions menu">
-    <a class="item">Stay safe in the heat</a>
-    <a class="item">Why is it so hot?</a>
-    <a class="item">Resources for keeping cool</a>
-    {{#link-to 'places.nearby' class='cancel item'}}Find cool places{{/link-to}}
-    <a class="item">Home</a>
-    <a class="item">About</a>
+    {{#link-to 'index' class='cancel item'}}Home{{/link-to}}
+    {{#link-to 'places.nearby' class='cancel item'}}Find Cool Places{{/link-to}}
+    {{#link-to 'info.heat-safety' class='cancel item'}}Heat Safety{{/link-to}}
+    {{#link-to 'info.why-is-it-so-hot' class='cancel item'}}Why is it so hot?{{/link-to}}
+    {{#link-to 'info.about' class='cancel item'}}About{{/link-to}}
   </div>
 {{/ui-modal}}
 {{yield}}
