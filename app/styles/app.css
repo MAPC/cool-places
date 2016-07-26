@@ -8,6 +8,45 @@ html,body {
   overflow-x: hidden;
 }
 
+.masthead {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.splash-portal {
+  margin-left: 0 !important; 
+  margin-right: 0 !important; 
+  margin-bottom: 0 !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+  background-size: 100%;
+  /* Default blue gradient */
+  background-image: -webkit-linear-gradient(#2EAEC1, #1F5D97);
+  background-image: linear-gradient(#2EAEC1, #1F5D97);
+  position: relative;
+  z-index: 100;
+}
+.splash-portal-heat-warning:before {
+  border-radius: inherit;
+  /* Orange gradient */
+  background-image: -webkit-linear-gradient(#D84834, #E88028);
+  background-image: linear-gradient(#D84834, #E88028);
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -100;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+}
+.splash-portal-heat-warning:hover:before {
+  opacity: 1;
+}
+
 #map {
 	width:100%;
 	height: 100%;
@@ -22,7 +61,8 @@ html,body {
 }
 
 .ui.fixed.menu{
-  height: 65px;
+  height: 35px;
+  background-color: rgba(255,255,255,0.9);
 }
 
 .black {

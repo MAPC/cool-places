@@ -1,6 +1,8 @@
-{{header-menu}}
+{{header-menu 
+  forecast=model.forecast 
+  current_temp=model.current_temp 
+  heat_alert=model.heat_alert}}
 
 <div class="main-app">
-  {{alert}}
   {{outlet}}
 </div>

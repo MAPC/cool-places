@@ -1,7 +1,13 @@
 <div class="ui fixed menu">
   {{#link-to 'index' class="item"}}
-    Keep Cool
+    <i class="marker icon"></i>
   {{/link-to}}
+  <div class="item">
+    Now {{current_temp}}°
+  </div>
+  <div class="item">
+    Today {{forecast}}°
+  </div>
   <div class="right menu">
     <a {{action 'openModal' on='tap'}} class="item">
       <i class="content large layout icon"></i>
