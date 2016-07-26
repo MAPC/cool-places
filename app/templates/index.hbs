@@ -2,25 +2,33 @@
   {{#splash-weather heat_alert=model.weather.heat_alert}}
     <h1>Keep Cool</h1>
     <p>Find local places to keep cool this summer</p>
-    {{#if geolocation.disabled}}
-    {{else}}
-      {{#link-to 'places.nearby' class="ui fluid button"}}
-        <i class="location arrow icon"></i>
-        Find places near me
-      {{/link-to}}
-    {{/if}}
-    <div class="ui horizontal inverted divider">OR</div>
-    {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
-      <div class="default text">Select an area</div>
-      <i class="dropdown icon"></i>
-      <div class="menu">
-      {{#each model.towns as |town|}}
-        <div class="item" data-id="{{town.name}}">
-          {{town.name}}
+    <div class="ui container" style="position:relative;">
+      <div class="ui two column very relaxed stackable grid">
+        {{#if geolocation.disabled}}
+        {{else}}
+          <div class="column">
+            {{#link-to 'places.nearby' class="ui fluid button"}}
+              <i class="location arrow icon"></i>
+              Find places near me
+            {{/link-to}}
+          </div>
+        {{/if}}
+        <div class="ui vertical inverted divider">OR</div>
+        <div class="center aligned column">
+          {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
+            <div class="default text">Select an area</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+            {{#each model.towns as |town|}}
+              <div class="item" data-id="{{town.name}}">
+                {{town.name}}
+              </div>
+            {{/each}}
+            </div>
+          {{/ui-dropdown}}
         </div>
-      {{/each}}
       </div>
-    {{/ui-dropdown}}
+    </div>
   {{/splash-weather}}
 </div>
 <div class="ui container">

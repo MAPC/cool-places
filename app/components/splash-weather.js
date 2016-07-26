@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['ui', 'splash-portal'],
+  classNames: ['splash-portal'],
   classNameBindings: ['heat_alert:splash-portal-heat-warning']
 });
