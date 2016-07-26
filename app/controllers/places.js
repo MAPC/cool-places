@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
     return this.get('mapRouter.bounds');
   }.property('mapRouter.bounds'),
   fitBoundsOptions: function() {
-    console.log("fired");
+    console.log(this.get('mapRouter.boundsOptions'));
     return this.get('mapRouter.boundsOptions');
-  }.property('mapRouter.boundsOptions.{maxZoom,paddingBottomRight.@each}')
+  }.property('mapRouter.boundsOptions')
 });

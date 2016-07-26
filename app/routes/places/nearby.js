@@ -38,6 +38,7 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model) {
     let geojson = [];
+    console.log("Setting nearby");
     // let model = this.modelFor('places');
     // let models = model || [];
 
