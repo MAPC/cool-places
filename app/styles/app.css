@@ -10,7 +10,7 @@ html,body {
 }
 
 h1,h2,h3,h4,h5,a, p {
- font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important; 
+ font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
 h1,h2,h3,h4,h5 {
@@ -23,8 +23,8 @@ h1,h2,h3,h4,h5 {
 }
 
 .splash-portal {
-  margin-left: 0 !important; 
-  margin-right: 0 !important; 
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   margin-bottom: 0 !important;
   padding-left: 1em !important;
   padding-right: 1em !important;
@@ -69,12 +69,20 @@ h1,h2,h3,h4,h5 {
   /*height: calc(75vh);*/
 }
 
-.ui.fixed.menu{
+
+/* Small menu for desktop, larger (clickable) on phones */
+
+.ui.fixed.menu {
   height: 35px;
   background-color: rgba(255,255,255,0.9);
   top: auto;
   bottom: 0;
   z-index: 200;
+  height: 45px;
+}
+
+.ui.container {
+  margin-top: 65px;
 }
 
 .black {
@@ -106,10 +114,10 @@ h1,h2,h3,h4,h5 {
 }
 
 .leaflet-bar a, .leaflet-bar a:hover, .leaflet-touch .leaflet-bar a {
-    width: 50px;
-    height: 50px;
-    line-height: 53px;
-    z-index: 99;
+  width:  50px;
+  height: 50px;
+  line-height: 53px;
+  z-index: 99;
 }
 
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {
@@ -118,12 +126,78 @@ h1,h2,h3,h4,h5 {
     z-index: 99;
 }
 
-.cool-places {
+.full-height {
   position:relative;
   height: calc(100vh);
 }
 
-.cool-places h1,h2,h3,h4,h5,h6 {
+/* SCROLL SNAPPING */
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+
+  .scroll-container {
+    width: 100%;
+    height: calc(95vh);
+    margin-top:  45px !important;
+    margin-left:  0   !important;
+    margin-right: 0   !important;
+    overflow-y: scroll;
+    scroll-snap-points-y: repeat(calc(95vh));
+    scroll-snap-type: mandatory;
+  }
+}
+
+.container > div {
+  width:  100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.content-section {
+  color: #333;
+  font-weight: normal;
+  padding: 25px 10px 0;
+  scroll-snap-type: proximity;
+}
+
+.content-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.content-section > img {
+  margin-top: -20px;
+  max-height: 80%;
+  max-width: 100%;
+}
+
+/*.content-section:nth-child(3n+2) {
+  background: #D84834;
+}
+
+.content-section:nth-child(3n+0) {
+  background: #E88028;
+}
+
+.content-section:nth-child(3n+1) {
+  background: #2EAEC1;
+}*/
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .content-section {
+    scroll-snap-type: mandatory;
+  }
+}
+
+/* END SCROLL SNAPPING */
+
+
+.cool-places h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
@@ -156,7 +230,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .google-directions-button {
-  right: 10px; 
+  right: 10px;
   position: absolute;
   top: -30px;
   box-shadow: 0px -3px 15px #888 !important;
