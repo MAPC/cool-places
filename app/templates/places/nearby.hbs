@@ -1,6 +1,8 @@
 <div class="nearby-places-list">
-  <h2 class="ui center aligned header">Places Nearby</h2>
   <div class="ui fluid vertical menu">
+    <div class="item">
+      <h2 class="ui center aligned header">Places Nearby</h2>
+    </div>
     {{#each model.places as |place|}}
       {{#if place.nearby}}
         {{#link-to 'places.place' place class="item"}}
