@@ -26,5 +26,10 @@ export default Ember.Route.extend({
     });
 
     return L.geoJson(geojson);
+  },
+  actions: {
+    back() {
+      history.back();
+    }
   }
 });
