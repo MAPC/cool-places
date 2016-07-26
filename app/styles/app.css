@@ -163,8 +163,8 @@ h1,h2,h3,h4,h5 {
 }
 
 .back-button {
-  position: absolute;
+  position: fixed;
   left: -5px;
-  top: 40px;
+  top: 15px;
   cursor: pointer;
 }
