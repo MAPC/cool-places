@@ -6,6 +6,11 @@ html,body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'canada-type-gibson';
+}
+
+h1,h2,h3,h4,h5,a, p {
+ font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important; 
 }
 
 .masthead {
@@ -57,7 +62,7 @@ html,body {
 }
 
 .vertical-segment {
-  height: calc(75vh);
+  /*height: calc(75vh);*/
 }
 
 .ui.fixed.menu{
@@ -134,7 +139,8 @@ html,body {
 }
 
 .splash-portal {
-  height: calc(75vh);
+  color: #fff;
+  height: calc(95vh);
   padding-top: 65px;
 }
 

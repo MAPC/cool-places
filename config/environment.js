@@ -7,9 +7,10 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com http://api.wunderground.com",
-                              'img-src': "'self' http://*.basemaps.cartocdn.com/ data:",
-                              'font-src': "'self' data:",
-                              'style-src': "'self' 'unsafe-inline'" },
+                              'img-src': "'self' http://*.basemaps.cartocdn.com/ data: https://p.typekit.net",
+                              'font-src': "'self' data: https://fonts.typekit.net",
+                              'style-src': "'self' 'unsafe-inline'",
+                              'script-src': "'self' 'unsafe-eval' 'unsafe-inline' localhost:49152 0.0.0.0:49152 http://use.typekit.net https://use.typekit.net" },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -23,6 +24,9 @@ module.exports = function(environment) {
     }
   };
 
+ ENV.typekit = {
+      kitId: 'brw3zbp'
+  }
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
