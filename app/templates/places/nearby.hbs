@@ -1,3 +1,12 @@
 <div class="nearby-places-list">
-  Test
+  <h2 class="ui center aligned header">Places Nearby</h2>
+  <div class="ui fluid vertical menu">
+    {{#each model.places as |place|}}
+      {{#if place.nearby}}
+        {{#link-to 'places.place' place class="item"}}
+          {{place.name}} - {{place.place_type}}
+        {{/link-to}}
+      {{/if}}
+    {{/each}}
+  </div>
 </div>

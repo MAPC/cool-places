@@ -40,6 +40,8 @@ html,body {
   z-index: 101;
   background-color: white;
   width: 100%;
+  height: 40%;
+  box-shadow: 0px -3px 15px #888
 }
 
 .leaflet-top, .leaflet-left {

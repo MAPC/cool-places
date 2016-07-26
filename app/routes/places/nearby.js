@@ -9,7 +9,6 @@ export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
 
   nearestMax: 7,
-  // userLocation: [42.426092,-70.927705],
   model(params) {
     let places = this.modelFor('places');
     let mapRouter = this.get('mapRouter');
@@ -28,7 +27,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       places,
       currentLocation
-    });
+    }).then((model) => { return model; });
     // this.get('geolocation').getLocation(); 
     // RSVP hash sets up the promisees for the model AND the get location property
     // The template and leaflet won't update until the promises are resolved
@@ -83,7 +82,7 @@ export default Ember.Route.extend({
     geojson.addData({
         type: 'Feature',
         geometry: { type: 'Point', coordinates: [this.get('geolocation.currentLocation')[1], this.get('geolocation.currentLocation')[0]] },
-        properties: {}
+        properties: { }
       });
     console.log(geojson);
     var index = leafletKnn(geojson);
@@ -91,6 +90,22 @@ export default Ember.Route.extend({
     var nearestMax = this.get('nearestMax');
 
     var nearest = index.nearest(L.latLng(this.get('geolocation.currentLocation')), nearestMax);
+
+    var markersArray = nearest.map((marker) => {
+      return marker.layer;
+    });
+    
+    var nearestIDs = markersArray.map((marker) => {
+      console.log(marker);
+      return marker.feature.properties.model_id;
+    });
+
+    nearestIDs.forEach((id) => {
+      if(id) {
+        this.store.peekRecord('place', id).set('nearby', true);  
+      }
+    });
+
     return nearest;
   }
 });
