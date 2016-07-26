@@ -28,5 +28,8 @@ export default DS.Model.extend({
   }.property('properties.phone'),
   name: function() {
     return this.get('properties.name');
-  }.property('properties.name')
+  }.property('properties.name'),
+  hours: function() {
+    return this.get('properties.hours');
+  }.property('properties.hours')
 });

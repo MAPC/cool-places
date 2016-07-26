@@ -9,6 +9,14 @@ html,body {
   font-family: 'canada-type-gibson';
 }
 
+[data-ember-action], a, button, input, .link {
+  cursor: pointer;
+}
+
+.leaflet-control-attribution {
+  opacity: 0 !important;
+}
+
 h1,h2,h3,h4,h5,a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }

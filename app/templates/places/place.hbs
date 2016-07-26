@@ -6,8 +6,14 @@
     {{model.place_type}} · {{model.address}}
     <div class="ui divider">
     </div>
+    {{#if model.hours}}
+      <p><i class="wait big icon"></i>{{model.hours}}</p>
+    {{/if}}
     {{#if model.phone}}
-      <a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a>
+      <p><a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a></p>
     {{/if}}
   </div>
+  <br/>
+  <br/>
+  <br/>
 </div>
