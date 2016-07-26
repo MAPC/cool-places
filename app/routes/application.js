@@ -6,10 +6,10 @@ export default Ember.Route.extend({
     return new Ember.RSVP.hash({
       heat_alert: Ember.$.ajax({
           url: 'https://api.wunderground.com/api/7a00b70d60a1ac6b/alerts/q/MA/Boston.json', type: 'GET'
-        }).then(function(response) { 
+        }).then(function(response) {
           let heat_advisory_status = false;
           if (response.alerts) {
-            response.alerts.forEach((alert) => {  
+            response.alerts.forEach((alert) => {
               if (alert['type'] == "HEA") {
                 heat_advisory_status = true;
               }
@@ -25,7 +25,7 @@ export default Ember.Route.extend({
       current_temp: Ember.$.ajax({
           url: 'https://api.wunderground.com/api/7a00b70d60a1ac6b/conditions/q/MA/Boston.json', type: 'GET'
         }).then(function(response) {
-          return response.current_observation.temp_f;
+          return parseInt(response.current_observation.temp_f);
         })
     });
   }

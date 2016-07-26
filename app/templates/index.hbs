@@ -4,16 +4,15 @@
     <p>Find local places to keep cool this summer</p>
     <div class="ui container" style="position:relative;">
       <div class="ui two column very relaxed stackable grid">
-        {{#if geolocation.disabled}}
-        {{else}}
+        {{#unless geolocation.disabled}}
           <div class="column">
             {{#link-to 'places.nearby' class="ui fluid button"}}
               <i class="location arrow icon"></i>
               Find places near me
             {{/link-to}}
           </div>
-        {{/if}}
-        <div class="ui vertical inverted divider">OR</div>
+          <div class="ui vertical inverted divider">OR</div>
+        {{/unless}}
         <div class="center aligned column">
           {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
             <div class="default text">Select an area</div>
@@ -32,19 +31,30 @@
   {{/splash-weather}}
 </div>
 <div class="ui container">
-  <h1>Why so hot?</h1>
-  <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-</div>
-<div class="black">
-  <div class="ui container">
-    <h1>Stay safe!</h1>
-    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+  <h2>Why is it so hot?</h2>
+  <p>
+    Why does it seem to be getting hotter? Learn the science behind the hot weather.
+  </p>
+  <div style="text-align: center;">
+    {{#link-to 'info.why-is-it-so-hot' class="ui red basic button"}}
+      Learn more
+    {{/link-to}}
   </div>
 </div>
-<div class="ui container">
-  <h1>About</h1>
-  <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<div class="ui container" style="margin-bottom: 85px;">
+  <h2>Stay safe in the high heat!</h2>
+  <p>
+    Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
+  </p>
+  <div style="text-align: center;">
+    {{#link-to 'info.heat-safety' class="ui primary basic button"}}
+      Stay safe
+    {{/link-to}}
+  </div>
 </div>
+
+{{!-- Only for desktop
 <div class="ui inverted vertical footer segment">
   <div class="ui container">
     <div class="ui stackable inverted divided equal height stackable grid">
@@ -73,3 +83,4 @@
     </div>
   </div>
 </div>
+ --}}
