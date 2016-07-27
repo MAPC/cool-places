@@ -84,10 +84,10 @@ h1,h2,h3,h4,h5 {
 
 .ui.fixed.menu.nav {
   height: 35px;
-  background-color: rgba(255,255,255,1);
+  background-color: #57C2F0;
   top: auto;
   bottom: 0;
-  z-index: 200;
+  z-index: 1001;
   height: 60px;
 }
 
@@ -221,6 +221,10 @@ h1,h2,h3,h4,h5 {
   box-shadow: 0px -3px 15px #888
 }
 
+.place-info a {
+  color: #fff !important;
+}
+
 .top-level {
   height: 100%;
 }
@@ -266,13 +270,13 @@ h1,h2,h3,h4,h5 {
 }
 
 .splash-logo {
-  width: 80%;
+  width: 70%;
 }
 
 .tagline {
   font-weight: 200;
   letter-spacing: 1px;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .splash-grid {
@@ -306,6 +310,7 @@ h1,h2,h3,h4,h5 {
 
 .weather-menu-item {
   font-size: .8em !important;
+  color: #fff !important;
 }
 
 .place-body {
@@ -327,4 +332,12 @@ h1,h2,h3,h4,h5 {
 
 .ui.fixed.menu.warning > .item > h3 {
   width: 100%;
+}
+
+.transparent-nav > .nav {
+  background-color: transparent !important;
+}
+
+.light-blue-text {
+  color: #57C2F0 !important;
 }

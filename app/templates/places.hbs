@@ -1,7 +1,9 @@
+{{header-menu 
+  splash=false}}
 <i {{action 'back'}} class="angle left icon huge back-button"></i>
 <div class="cool-places full-height">
   {{#leaflet-map id="map" zoomControl=false bounds=mapBounds fitBoundsOptions=fitBoundsOptions}}
-    {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+    {{tile-layer url="https://api.mapbox.com/styles/v1/arouault/cir539pwq000zbxnj351jmddz/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJvdWF1bHQiLCJhIjoiY2lyNTBucDR5MDFwNWZwbm1peXc3ZDl1NSJ9.XJx7uuLo7-eU45DErFfu_g"}}
       {{#each model as |place|}}
         {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}
       {{/each}}

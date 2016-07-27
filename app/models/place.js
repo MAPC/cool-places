@@ -31,5 +31,8 @@ export default DS.Model.extend({
   }.property('properties.name'),
   hours: function() {
     return this.get('properties.hours');
-  }.property('properties.hours')
+  }.property('properties.hours'),
+  place_types: function() {
+    return this.get('place_type').split(" and ");
+  }.property('place_type')
 });
