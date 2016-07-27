@@ -35,5 +35,25 @@ export default Ember.Controller.extend({
   fitBoundsOptions: function() {
     console.log(this.get('mapRouter.boundsOptions'));
     return this.get('mapRouter.boundsOptions');
-  }.property('mapRouter.boundsOptions')
+  }.property('mapRouter.boundsOptions'),
+
+  basicMarkerOptions: function(url) {
+    return L.icon({
+      iconUrl: url,
+      iconAnchor: [25,50],
+      iconSize: [50,51],
+      shadowUrl: 'assets/images/marker-shadow.png',
+      shadowSize: [41, 41],
+      shadowAnchor: [12, 38]
+    });
+  },
+
+  beach: function() { return this.basicMarkerOptions("Map-icons-50x50-Beach-01.png") }.property(),
+  heat: function() { return this.basicMarkerOptions("Map-icons-50x50-heat-01.png") }.property(),
+  library: function() { return this.basicMarkerOptions("Map-icons-50x50-Library-01.png") }.property(),
+  park: function() { return this.basicMarkerOptions("Map-icons-50x50-park-01.png") }.property(),
+  pool: function() { return this.basicMarkerOptions("Map-icons-50x50-Pool-01.png") }.property(),
+  sprayDeck: function() { return this.basicMarkerOptions("Map-icons-50x50-SprayDeck-01.png") }.property(),
+  wading: function() { return this.basicMarkerOptions("Map-icons-50x50-Wading-01.png") }.property(),
+  waterPlay: function() { return this.basicMarkerOptions("Map-icons-50x50-WaterPlay-01.png") }.property()
 });

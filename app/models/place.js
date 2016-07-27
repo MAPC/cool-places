@@ -17,6 +17,7 @@ export default DS.Model.extend({
     return this.get('properties.type');
   }.property('properties.type'),
   nearby: DS.attr('boolean', { defaultValue: false }),
+  show: DS.attr('boolean', { defaultValue: true }),
   address: function() {
     return this.get('properties.true_address');
   }.property('properties.true_address'),
@@ -34,5 +35,8 @@ export default DS.Model.extend({
   }.property('properties.hours'),
   place_types: function() {
     return this.get('place_type').split(" and ");
-  }.property('place_type')
+  }.property('place_type'),
+  first_type: function() {
+    return this.get('place_types')[0];
+  }.property('place_types')
 });
