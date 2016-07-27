@@ -34,5 +34,8 @@ export default DS.Model.extend({
   }.property('properties.hours'),
   place_types: function() {
     return this.get('place_type').split(" and ");
-  }.property('place_type')
+  }.property('place_type'),
+  first_type: function() {
+    return this.get('place_types')[0];
+  }.property('place_types')
 });

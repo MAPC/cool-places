@@ -5,8 +5,33 @@
   {{#leaflet-map id="map" zoomControl=false bounds=mapBounds fitBoundsOptions=fitBoundsOptions}}
     {{tile-layer url="https://api.mapbox.com/styles/v1/arouault/cir539pwq000zbxnj351jmddz/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJvdWF1bHQiLCJhIjoiY2lyNTBucDR5MDFwNWZwbm1peXc3ZDl1NSJ9.XJx7uuLo7-eU45DErFfu_g"}}
       {{#each model as |place|}}
-        {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}
+
+        {{#if (eq place.first_type 'Beach')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=beach}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Wading Pool')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=wading}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Diving Pool')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=pool}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Spray Deck')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=sprayDeck}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Water Play')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=waterPlay}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'BCYF Cooling Center')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=heat}}
+        {{/if}}
+
       {{/each}}
+
     {{#if geolocation.currentLocation}}
       {{marker-layer location=geolocation.currentLocation icon=callOutMarker}}
     {{/if}}
