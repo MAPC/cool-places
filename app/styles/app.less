@@ -17,12 +17,14 @@ html,body {
   opacity: 0 !important;
 }
 
-h1,h2,h3,h4,h5,a, p {
+h1, h2, h3, h4, h5, a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
-h1,h2,h3,h4,h5 {
-  font-weight: 600 !important;
+h1.ui.header { font-weight: 500; }
+
+h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
+  font-weight: 600;
 }
 
 .masthead {
@@ -175,6 +177,7 @@ h1,h2,h3,h4,h5 {
   font-weight: normal;
   padding: 25px 10px 0;
   scroll-snap-type: proximity;
+  display: flex;
 }
 
 .content-section p {
@@ -184,7 +187,6 @@ h1,h2,h3,h4,h5 {
 
 .content-section h1.ui.header {
   color: #FFF;
-  background-color: #ED5738;
   font-weight: 500;
   padding: 10px;
 }
@@ -200,6 +202,19 @@ h1,h2,h3,h4,h5 {
   margin-top: -20px;
   max-height: 80%;
   max-width: 100%;
+}
+
+.prompt-next {
+  align-self: flex-end;
+}
+
+.prompt-next h3.ui.header {
+  border: none;
+  color: #FFF;
+}
+
+.prompt-next p {
+  color: #FFF;
 }
 
 .content-preview {
@@ -320,7 +335,7 @@ h1,h2,h3,h4,h5 {
   color: #fff !important;
   background-color: #57C2F0 !important;
   background-repeat: no-repeat !important;
-  background-size: 100% 100% !important; 
+  background-size: 100% 100% !important;
   width: 60px;
 }
 
@@ -331,7 +346,7 @@ h1,h2,h3,h4,h5 {
 
 .mini-logo-menu-item {
   background-color: #57C2F0 !important;
-  background-size: 100% 100% !important; 
+  background-size: 100% 100% !important;
   background-image: url("../KeepCool-Icon-Logo.png") !important;
   background-repeat: no-repeat !important;
   width: 60px;
