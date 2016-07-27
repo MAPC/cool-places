@@ -315,3 +315,16 @@ h1,h2,h3,h4,h5 {
 .selection {
   border-radius: 0 !important;
 }
+
+.ui.fixed.menu.warning {
+  background-color: #ED5738;
+}
+
+.ui.fixed.menu.warning > .item {
+  width: 100%;
+  text-align: center;
+}
+
+.ui.fixed.menu.warning > .item > h3 {
+  width: 100%;
+}
