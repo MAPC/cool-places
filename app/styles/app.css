@@ -82,7 +82,7 @@ h1,h2,h3,h4,h5 {
 
 /* Small menu for desktop, larger (clickable) on phones */
 
-.ui.fixed.menu {
+.ui.fixed.menu.nav {
   height: 35px;
   background-color: rgba(255,255,255,1);
   top: auto;
@@ -310,4 +310,8 @@ h1,h2,h3,h4,h5 {
 
 .place-body {
   color: #fff !important;
+}
+
+.selection {
+  border-radius: 0 !important;
 }
