@@ -47,8 +47,8 @@ h1,h2,h3,h4,h5 {
 .splash-portal-heat-warning:before {
   border-radius: inherit;
   /* Orange gradient */
-  background-image: -webkit-linear-gradient(#F37B3E, #ED5738);
-  background-image: linear-gradient(#F37B3E, #ED5738);
+  background-image: -webkit-linear-gradient(#ED5738, #F37B3E);
+  background-image: linear-gradient(#ED5738, #F37B3E);
   content: '';
   display: block;
   height: 100%;
