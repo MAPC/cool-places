@@ -9,12 +9,20 @@ html,body {
   font-family: 'canada-type-gibson';
 }
 
+[data-ember-action], a, button, input, .link {
+  cursor: pointer;
+}
+
+.leaflet-control-attribution {
+  opacity: 0 !important;
+}
+
 h1,h2,h3,h4,h5,a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
 h1,h2,h3,h4,h5 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .masthead {
@@ -30,8 +38,8 @@ h1,h2,h3,h4,h5 {
   padding-right: 1em !important;
   background-size: 100%;
   /* Default blue gradient */
-  background-image: -webkit-linear-gradient(#2EAEC1, #1F5D97);
-  background-image: linear-gradient(#2EAEC1, #1F5D97);
+  background-image: -webkit-linear-gradient(#57C2F0, #1573B6);
+  background-image: linear-gradient(#57C2F0, #1573B6);
   position: relative;
   z-index: 100;
 }
@@ -39,8 +47,8 @@ h1,h2,h3,h4,h5 {
 .splash-portal-heat-warning:before {
   border-radius: inherit;
   /* Orange gradient */
-  background-image: -webkit-linear-gradient(#D84834, #E88028);
-  background-image: linear-gradient(#D84834, #E88028);
+  background-image: -webkit-linear-gradient(#ED5738, #F37B3E);
+  background-image: linear-gradient(#ED5738, #F37B3E);
   content: '';
   display: block;
   height: 100%;
@@ -74,17 +82,17 @@ h1,h2,h3,h4,h5 {
 
 /* Small menu for desktop, larger (clickable) on phones */
 
-.ui.fixed.menu {
+.ui.fixed.menu.nav {
   height: 35px;
-  background-color: rgba(255,255,255,0.9);
+  background-color: #57C2F0;
   top: auto;
   bottom: 0;
-  z-index: 200;
-  height: 45px;
+  z-index: 1001;
+  height: 60px;
 }
 
 .ui.container {
-  margin-top: 65px;
+  margin-top: 35px;
 }
 
 .black {
@@ -241,9 +249,13 @@ h1,h2,h3,h4,h5 {
   bottom: 0;
   z-index: 101;
   width: 100%;
-  background-color: white;
-  height: 50%;
+  background-color: #1573B6;
+  height: 80%;
   box-shadow: 0px -3px 15px #888
+}
+
+.place-info a {
+  color: #fff !important;
 }
 
 .top-level {
@@ -257,7 +269,11 @@ h1,h2,h3,h4,h5 {
 .splash-portal {
   color: #fff;
   height: calc(95vh);
-  padding-top: 65px;
+  padding-top: 35px;
+}
+
+.ui.menu {
+  border: 0;
 }
 
 .ui.dropdown .menu > .item {
@@ -272,8 +288,89 @@ h1,h2,h3,h4,h5 {
 }
 
 .back-button {
-  position: absolute;
+  position: fixed;
   left: -5px;
-  top: 40px;
+  top: 15px;
   cursor: pointer;
+}
+
+.find-places-button {
+  background-color: #57C2F0 !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+   letter-spacing: 1px;
+}
+
+.splash-logo {
+  width: 70%;
+}
+
+.tagline {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 1.3em;
+}
+
+.splash-grid {
+  height: 100%;
+}
+
+.menu-item-blue {
+  color: #fff !important;
+  background-color: #57C2F0 !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important; 
+  width: 60px;
+}
+
+.menu-item-blue > i {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.mini-logo-menu-item {
+  background-color: #57C2F0 !important;
+  background-size: 100% 100% !important; 
+  background-image: url("../KeepCool-Icon-Logo.png") !important;
+  background-repeat: no-repeat !important;
+  width: 60px;
+}
+
+.divider {
+  font-weight: 500 !important;
+}
+
+.weather-menu-item {
+  font-size: .8em !important;
+  color: #fff !important;
+}
+
+.place-body {
+  color: #fff !important;
+}
+
+.selection {
+  border-radius: 0 !important;
+}
+
+.ui.fixed.menu.warning {
+  background-color: #ED5738;
+}
+
+.ui.fixed.menu.warning > .item {
+  width: 100%;
+  text-align: center;
+}
+
+.ui.fixed.menu.warning > .item > h3 {
+  width: 100%;
+}
+
+.transparent-nav > .nav {
+  background-color: transparent !important;
+}
+
+.light-blue-text {
+  color: #57C2F0 !important;
 }

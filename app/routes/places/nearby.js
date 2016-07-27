@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     if(this.get('geolocation.currentLocation')) {
       var currentLocation = this.get('geolocation.currentLocation');
     } else {
-      var currentLocation = this.get('geolocation').getLocation().then((object) => {
+      var currentLocation = this.get('geolocation').getLocation(function() {}, function() {}, {timeout: 6000}).then((object) => {
       }, (error) => { 
                       alert("Location services disabled"); 
                       this.transitionTo('index'); 

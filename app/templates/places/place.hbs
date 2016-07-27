@@ -1,14 +1,26 @@
 <i {{action 'back'}} class="angle left icon huge back-button"></i>
 <div class="place-info">
   <a href="https://www.google.com/maps/dir//{{model.latitude}},+{{model.longitude}}" target="_blank"><i class="share icon big circular inverted google-directions-button"></i></a>
-  <div class="ui container">
-    <br />
+  <div class="ui container place-body">
     <h1>{{model.name}}</h1>
-    {{model.place_type}} · {{model.address}}
+    <p class="light-blue-text">{{model.place_type}} · {{model.address}}</p>
     <div class="ui divider">
     </div>
-    {{#if model.phone}}
-      <a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a>
+    {{#if model.hours}}
+      <p><i class="wait big icon"></i>{{model.hours}}</p>
     {{/if}}
+    {{#if model.phone}}
+      <p><a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a></p>
+    {{/if}}
+    <div class="ui divider">
+    </div>
+    <div class="ui list">
+      {{#each model.place_types as |type|}}
+        <div class="item">{{type}}</div>
+      {{/each}}
+    </div>
   </div>
+  <br/>
+  <br/>
+  <br/>
 </div>

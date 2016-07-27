@@ -1,15 +1,17 @@
-<div class="ui fixed borderless menu">
-  {{#link-to 'index' class="item"}}
-    <i class="marker icon"></i>
-  {{/link-to}}
-  <div class="item">
-    Now {{current_temp}}°
-  </div>
-  <div class="item">
-    Today's High {{forecast}}°
-  </div>
+<div class="ui fixed borderless menu nav">
+  {{#if splash}}
+    <div class="item weather-menu-item">
+      NOW {{current_temp}}°
+    </div>
+    <div class="item weather-menu-item">
+      TODAY'S HIGH {{forecast}}°
+    </div>
+  {{else}}
+    {{#link-to 'index' class="item menu-item-blue mini-logo-menu-item"}}
+    {{/link-to}}
+  {{/if}}
   <div class="right menu">
-    <a {{action 'openModal' on='tap'}} class="item">
+    <a {{action 'openModal' on='tap'}} class="item menu-item-blue">
       <i class="content layout icon"></i>
     </a>
   </div>

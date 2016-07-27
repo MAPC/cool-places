@@ -1,30 +1,50 @@
+{{header-menu
+  forecast=model.weather.forecast
+  current_temp=model.weather.current_temp
+  heat_alert=model.weather.heat_alert
+  splash=true}}
 <div class="ui vertical masthead center aligned segment">
   {{#splash-weather heat_alert=model.weather.heat_alert}}
-    <h1>Keep Cool</h1>
-    <p>Find local places to keep cool this summer</p>
-    <div class="ui container" style="position:relative;">
-      <div class="ui two column very relaxed stackable grid">
-        {{#unless geolocation.disabled}}
-          <div class="column">
-            {{#link-to 'places.nearby' class="ui fluid button"}}
-              <i class="location arrow icon"></i>
-              Find places near me
-            {{/link-to}}
-          </div>
-          <div class="ui vertical inverted divider">OR</div>
-        {{/unless}}
-        <div class="center aligned column">
-          {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
-            <div class="default text">Select an area</div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-            {{#each model.towns as |town|}}
-              <div class="item" data-id="{{town.name}}">
-                {{town.name}}
+    <div class="ui equal width center aligned padded grid splash-grid">
+      <div class="row">
+        <div class="column">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="KeepCool-Splash-Logo-Vertical.png" class="ui centered image splash-logo">
+          <p class="tagline">Find local places to keep cool this summer</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="ui container" style="position:relative;">
+            <div class="ui two column very relaxed stackable grid">
+              {{#unless geolocation.disabled}}
+                <div class="column">
+                  {{#link-to 'places.nearby' class="ui fluid button find-places-button"}}
+                    <i class="location arrow icon"></i>
+                    FIND COOL PLACES
+                  {{/link-to}}
+                </div>
+                <div class="ui vertical inverted divider">OR</div>
+              {{/unless}}
+              <div class="center aligned column">
+                {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
+                  <div class="default text">Select an area</div>
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                  {{#each model.towns as |town|}}
+                    <div class="item" data-id="{{town.name}}">
+                      {{town.name}}
+                    </div>
+                  {{/each}}
+                  </div>
+                {{/ui-dropdown}}
               </div>
-            {{/each}}
             </div>
-          {{/ui-dropdown}}
+          </div>
         </div>
       </div>
     </div>
@@ -36,9 +56,9 @@
     Why does it seem to be getting hotter? Learn the science behind the hot weather.
   </p>
   <div style="text-align: center;">
-    <a href="/info/why-is-it-so-hot" class="ui red basic button">
+    {{#link-to 'info.why-is-it-so-hot' class="ui red basic button"}}
       Learn more
-    </a>
+    {{/link-to}}
   </div>
 </div>
 
@@ -48,9 +68,9 @@
     Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
   </p>
   <div style="text-align: center;">
-    <a href="/info/heat-safety" class="ui orange basic button">
+    {{#link-to 'info.heat-safety' class="ui orange basic button"}}
       Stay safe
-    </a>
+    {{/link-to}}
   </div>
 </div>
 
