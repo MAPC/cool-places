@@ -1,15 +1,15 @@
 <div class="ui fixed borderless menu">
-  {{#link-to 'index' class="item"}}
-    <i class="marker icon"></i>
+  {{#link-to 'index' class="item menu-item-blue mini-logo-menu-item"}}
+    {{!-- <img src="KeepCool-Icon-Logo.png" class="ui mini fluid image mini-logo-menu-item"> --}}
   {{/link-to}}
-  <div class="item">
-    Now {{current_temp}}°
+  <div class="item weather-menu-item">
+    NOW {{current_temp}}°
   </div>
-  <div class="item">
-    Today's High {{forecast}}°
+  <div class="item weather-menu-item">
+    TODAY'S HIGH {{forecast}}°
   </div>
   <div class="right menu">
-    <a {{action 'openModal' on='tap'}} class="item">
+    <a {{action 'openModal' on='tap'}} class="item menu-item-blue">
       <i class="content layout icon"></i>
     </a>
   </div>

@@ -1,6 +1,6 @@
 <i {{action 'back'}} class="angle left icon huge back-button"></i>
 <div class="cool-places full-height">
-  {{#leaflet-map id="map" scrollWheelZoom=false zoomControl=false bounds=mapBounds fitBoundsOptions=fitBoundsOptions dragging=false}}
+  {{#leaflet-map id="map" zoomControl=false bounds=mapBounds fitBoundsOptions=fitBoundsOptions}}
     {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
       {{#each model as |place|}}
         {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place)}}

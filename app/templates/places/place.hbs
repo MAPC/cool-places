@@ -1,7 +1,7 @@
 <i {{action 'back'}} class="angle left icon huge back-button"></i>
 <div class="place-info">
   <a href="https://www.google.com/maps/dir//{{model.latitude}},+{{model.longitude}}" target="_blank"><i class="share icon big circular inverted google-directions-button"></i></a>
-  <div class="ui container">
+  <div class="ui container place-body">
     <h1>{{model.name}}</h1>
     {{model.place_type}} · {{model.address}}
     <div class="ui divider">
