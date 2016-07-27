@@ -1,6 +1,6 @@
-{{header-menu 
-  forecast=model.weather.forecast 
-  current_temp=model.weather.current_temp 
+{{header-menu
+  forecast=model.weather.forecast
+  current_temp=model.weather.current_temp
   heat_alert=model.weather.heat_alert
   splash=true}}
   
@@ -9,7 +9,7 @@
     <div class="ui equal width center aligned padded grid splash-grid">
       <div class="row">
         <div class="column">
-          
+
         </div>
       </div>
       <div class="row">
@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <div class="column">
-          <div class="ui container" style="position:relative;">
+          <div class="ui container" style="position: relative; margin-top: 0; margin-bottom: 35px;">
             <div class="ui two column very relaxed stackable grid">
               {{#unless geolocation.disabled}}
                 <div class="column">
@@ -51,8 +51,8 @@
     </div>
   {{/splash-weather}}
 </div>
-<div class="ui container">
-  <h2>Why is it so hot?</h2>
+<div class="ui container content-preview">
+  <h2 class="ui header red">Why is it so hot?</h2>
   <p>
     Why does it seem to be getting hotter? Learn the science behind the hot weather.
   </p>
@@ -63,13 +63,13 @@
   </div>
 </div>
 
-<div class="ui container" style="margin-bottom: 85px;">
-  <h2>Stay safe in the high heat!</h2>
+<div class="ui container content-preview">
+  <h2 class="ui header orange">Stay safe in the high heat!</h2>
   <p>
     Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
   </p>
   <div style="text-align: center;">
-    {{#link-to 'info.heat-safety' class="ui primary basic button"}}
+    {{#link-to 'info.heat-safety' class="ui orange basic button"}}
       Stay safe
     {{/link-to}}
   </div>

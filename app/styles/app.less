@@ -9,6 +9,10 @@ html,body {
   font-family: 'canada-type-gibson';
 }
 
+body {
+  margin-bottom: 60px;
+}
+
 [data-ember-action], a, button, input, .link {
   cursor: pointer;
 }
@@ -17,12 +21,14 @@ html,body {
   opacity: 0 !important;
 }
 
-h1,h2,h3,h4,h5,a, p {
+h1, h2, h3, h4, h5, a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
-h1,h2,h3,h4,h5 {
-  font-weight: 600 !important;
+h1.ui.header { font-weight: 500; }
+
+h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
+  font-weight: 600;
 }
 
 .masthead {
@@ -131,17 +137,21 @@ h1,h2,h3,h4,h5 {
 }
 
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {
-    font: bold 24px 'Lucida Console', Monaco, monospace;
-    text-indent: 1px;
-    z-index: 99;
+  font: bold 24px 'Lucida Console', Monaco, monospace;
+  text-indent: 1px;
+  z-index: 99;
 }
 
 .full-height {
-  position:relative;
-  height: calc(100vh);
+  position: relative;
+  height:   calc(100vh);
 }
 
 /* SCROLL SNAPPING */
+
+.scroll-container {
+  padding-bottom: 70;
+}
 
 @media only screen
   and (min-device-width: 320px)
@@ -153,6 +163,7 @@ h1,h2,h3,h4,h5 {
     margin-top:  45px !important;
     margin-left:  0   !important;
     margin-right: 0   !important;
+    padding-bottom: 0;
     overflow-y: scroll;
     scroll-snap-points-y: repeat(calc(95vh));
     scroll-snap-type: mandatory;
@@ -170,10 +181,24 @@ h1,h2,h3,h4,h5 {
   font-weight: normal;
   padding: 25px 10px 0;
   scroll-snap-type: proximity;
+  display: flex;
 }
 
-.content-section h2 {
+.content-section p {
+  line-height: 25px;
+  max-width: 600px;
+}
+
+.content-section h1.ui.header {
+  color: #FFF;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.content-section h2.ui.header {
+  border-bottom: 1px gray dotted;
   font-size: 1.5em;
+  font-weight: 500;
   margin-bottom: 15px;
 }
 
@@ -181,6 +206,33 @@ h1,h2,h3,h4,h5 {
   margin-top: -20px;
   max-height: 80%;
   max-width: 100%;
+}
+
+.prompt-next {
+  align-self: flex-end;
+}
+
+.prompt-next h3.ui.header {
+  border: none;
+  color: #FFF;
+}
+
+.prompt-next p {
+  color: #FFF;
+}
+
+.content-preview {
+  border-top: 1px gray dotted;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.content-preview:first {
+  border-top: 0;
+}
+
+.content-preview:last {
+  margin-bottom: 85px;
 }
 
 /*.content-section:nth-child(3n+2) {
@@ -288,7 +340,7 @@ h1,h2,h3,h4,h5 {
   color: #fff !important;
   background-color: #57C2F0 !important;
   background-repeat: no-repeat !important;
-  background-size: 100% 100% !important; 
+  background-size: 100% 100% !important;
   width: 60px;
 }
 
@@ -299,7 +351,7 @@ h1,h2,h3,h4,h5 {
 
 .mini-logo-menu-item {
   background-color: #57C2F0 !important;
-  background-size: 100% 100% !important; 
+  background-size: 100% 100% !important;
   background-image: url("../KeepCool-Icon-Logo.png") !important;
   background-repeat: no-repeat !important;
   width: 60px;
