@@ -17,6 +17,7 @@ export default DS.Model.extend({
     return this.get('properties.type');
   }.property('properties.type'),
   nearby: DS.attr('boolean', { defaultValue: false }),
+  show: DS.attr('boolean', { defaultValue: true }),
   address: function() {
     return this.get('properties.true_address');
   }.property('properties.true_address'),

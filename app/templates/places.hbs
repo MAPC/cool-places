@@ -14,7 +14,23 @@
           {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=wading}}
         {{/if}}
 
+        {{#if (eq place.first_type 'Pond')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=wading}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Lake')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=wading}}
+        {{/if}}
+
         {{#if (eq place.first_type 'Diving Pool')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=pool}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Swimming Pool')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=pool}}
+        {{/if}}
+
+        {{#if (eq place.first_type 'Swimming')}}
           {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=pool}}
         {{/if}}
 
@@ -26,8 +42,13 @@
           {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=waterPlay}}
         {{/if}}
 
-        {{#if (eq place.first_type 'BCYF Cooling Center')}}
-          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=heat}}
+        {{#if (gt heat_alert '90')}}
+          {{#if (eq place.first_type 'BCYF Cooling Center')}}
+            {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=heat}}
+          {{/if}}
+          {{#if (eq place.first_type 'Cooling Center')}}
+            {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=heat}}
+          {{/if}}
         {{/if}}
 
       {{/each}}
