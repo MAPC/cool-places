@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
+const heat_alert_threshold = 90;
+
 export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
   model(params) {
     var forecast = this.modelFor('application').forecast;
     return this.get('store').findAll('place').then((model) => {
       return model.filter((model) => {
-        if (forecast < 90) {
+        if (forecast < heat_alert_threshold) {
           return model.get('first_type') !== 'BCYF Cooling Center' && model.get('first_type') !== 'Cooling Center';  
         } else {
           return model;
@@ -21,6 +23,7 @@ export default Ember.Route.extend({
     mapRouter.set('bounds', geojson.getBounds());
     controller.set('model', model);
     controller.set('heat_alert', heat_alert);
+    controller.set('heat_alert_threshold', heat_alert_threshold);
   },
   geojson: function(model) {
     let geojson = [];
