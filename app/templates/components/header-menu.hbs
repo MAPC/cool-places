@@ -1,10 +1,18 @@
 <div class="ui fixed borderless menu nav">
   {{#if splash}}
     <div class="item weather-menu-item">
-      NOW {{current_temp}}&deg;
+      NOW&nbsp;
+      <strong>
+        {{current_temp}}&deg;
+      </strong>
+      F
     </div>
     <div class="item weather-menu-item">
-      TODAY'S HIGH {{forecast}}&deg;
+      TODAY'S HIGH&nbsp;
+      <strong>
+        {{forecast}}&deg;
+      </strong>
+      F
     </div>
   {{else}}
     {{#link-to 'index' class="item menu-item-blue mini-logo-menu-item"}}

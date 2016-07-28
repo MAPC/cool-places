@@ -106,7 +106,7 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   and (max-device-width: 667px) {
   .ui.grid > .row > img.splash-logo,
   .ui.grid > .row > .column > img.splash-logo {
-    margin-top: -3%;
+    margin-top: 0%;
   }
 }
 
@@ -197,7 +197,7 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 
   .scroll-container {
     width: 100%;
-    height: calc(102vh);
+    height: calc(105vh);
     margin-top:  45px !important;
     margin-left:  0   !important;
     margin-right: 0   !important;
@@ -267,6 +267,15 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 
 .content-preview:first {
   border-top: 0;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+
+  .ui.button .last-preview {
+    margin-bottom: 50px;
+  }
 }
 
 /*
@@ -389,8 +398,7 @@ Considered cycling between background colors for content sections.
 
 #splash-input-container {
   position: relative;
-  margin-top: 25px;
-  margin-bottom: 35px;
+  margin-top: 10px;
 }
 
 .row.splash-input {
