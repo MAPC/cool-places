@@ -1,5 +1,5 @@
-<div class="ui container scroll-container">
-  <div class="content-section">
+<div class="scroll-container" style=>
+  <div class="content-section nopad">
 
     <h1 class="ui header" style="background-color: #F37B3E">
       Stay Safe in High Heat
@@ -139,9 +139,10 @@
     <p>
       Support for independent living, rebates for air conditioning, and more.
     </p>
-    <a class="ui large basic teal button">
+    {{#link-to 'info.resources' class="ui large basic teal button"}}
       Get connected
-    </a>
+      <i class="angle right icon"></i>
+    {{/link-to}}
   </div>
 
 </div>

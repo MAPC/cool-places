@@ -1,5 +1,5 @@
-<div class="ui container scroll-container">
-  <div class="content-section">
+<div class="scroll-container" style=>
+  <div class="content-section nopad">
 
     <h1 class="ui header" style="background-color: #ED5738">
       Why is it so hot?
@@ -152,9 +152,10 @@
     <p>
       Learn what you can do to prepare for and live well despite the heat.
     </p>
-    <a class="ui large basic orange button">
+    {{#link-to 'info.heat-safety' class="ui large basic orange button"}}
       Learn more
-    </a>
+      <i class="angle right icon"></i>
+    {{/link-to}}
   </div>
 
 </div>
