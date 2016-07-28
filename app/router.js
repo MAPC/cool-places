@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('about');
     this.route('heat-safety');
     this.route('why-is-it-so-hot');
+    this.route('resources');
   })
 });
 

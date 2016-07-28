@@ -4,22 +4,22 @@
   heat_alert=model.weather.heat_alert
   splash=true}}
 
+{{!-- TODO: Make this full-height on mobile, less on desktop, to show boxes --}}
 <div class="ui vertical masthead center aligned segment">
   {{#splash-weather heat_alert=(gt model.weather.forecast '90')}}
     <div class="ui equal width center aligned padded grid splash-grid">
-      {{!-- <div class="row">
-        <div class="column">
-        </div>
-      </div> --}}
       <div class="row">
         <div class="column">
-          <img src="KeepCool-Splash-Logo-Vertical.png" class="ui centered medium image splash-logo">
-          <p class="tagline">Find local places to keep cool this summer</p>
+          <img src="KeepCool-Splash-Logo-Vertical.png" class="ui centered fluid image splash-logo" />
+          <p class="tagline">
+            Find local places to keep cool this summer
+          </p>
         </div>
       </div>
+
+
       <div class="row">
         <div class="column">
-
           <div class="ui text container" id="splash-input-container">
 
             {{#unless geolocation.disabled}}
@@ -31,7 +31,6 @@
                   {{/link-to}}
                 </div>
               </div>
-
               <div class="row splash-input">
                 <div class="column">
                   <div class="ui horizontal inverted divider">
@@ -39,12 +38,14 @@
                   </div>
                 </div>
               </div>
-
             {{/unless}}
+
             <div class="row splash-input">
               <div class="column">
                 {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
-                  <div class="default text">Select an area</div>
+                  <div class="default text">
+                    Select an area
+                  </div>
                   <i class="dropdown icon"></i>
                   <div class="menu">
                   {{#each model.towns as |town|}}
@@ -56,40 +57,58 @@
                 {{/ui-dropdown}}
               </div>
             </div>
-
           </div>
-
-
-
         </div>
       </div>
+
+      <div class="row">
+        <div class="center aligned column" id="chevron-container">
+          <i class="chevron down icon"></i>
+        </div>
+      </div>
+
     </div>
   {{/splash-weather}}
 </div>
-<div class="ui container content-preview">
-  <h2 class="ui header red">Why is it so hot?</h2>
-  <p>
-    Why does it seem to be getting hotter? Learn the science behind the hot weather.
-  </p>
-  <div style="text-align: center;">
-    {{#link-to 'info.why-is-it-so-hot' class="ui red basic button"}}
-      Learn more
-    {{/link-to}}
+
+{{!-- TODO: Make this a stackable grid --}}
+<div class="ui three column padded stackable grid">
+  <div class="column content-preview">
+    <h3 class="ui header red">Why is it so hot?</h3>
+    <p>
+      Why does it seem to be getting hotter? Learn the science behind the hot weather.
+    </p>
+    <div style="text-align: center;">
+      {{#link-to 'info.why-is-it-so-hot' class="ui red basic button"}}
+        Learn more
+      {{/link-to}}
+    </div>
+  </div>
+
+  <div class="column content-preview">
+    <h3 class="ui header orange">Stay safe in the high heat!</h3>
+    <p>
+      Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
+    </p>
+    <div style="text-align: center;">
+      {{#link-to 'info.heat-safety' class="ui orange basic button"}}
+        Stay safe
+      {{/link-to}}
+    </div>
+  </div>
+
+  <div class="column content-preview">
+    <h3 class="ui header teal">Resources for keeping cool</h3>
+    <p>
+      Find energy efficiency and air conditioner replacement rebates near you.
+    </p>
+    <div style="text-align: center;">
+      {{#link-to 'info.resources' class="ui teal basic button"}}
+        Stay cool
+      {{/link-to}}
+    </div>
   </div>
 </div>
-
-<div class="ui container content-preview">
-  <h2 class="ui header orange">Stay safe in the high heat!</h2>
-  <p>
-    Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
-  </p>
-  <div style="text-align: center;">
-    {{#link-to 'info.heat-safety' class="ui orange basic button"}}
-      Stay safe
-    {{/link-to}}
-  </div>
-</div>
-
 {{!-- Only for desktop
 <div class="ui inverted vertical footer segment">
   <div class="ui container">

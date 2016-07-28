@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 28px;
 }
 
 [data-ember-action], a, button, input, .link {
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
-h1.ui.header { font-weight: 500; }
+h1.ui.header { font-weight: 600; }
 
 h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   font-weight: 600;
@@ -37,18 +37,36 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 }
 
 .splash-portal {
+  color: #FFF;
+
+  position: relative;
+  height: calc(72vh);
+  z-index: 100;
+
   margin-left:   0 !important;
   margin-right:  0 !important;
   margin-bottom: 0 !important;
+
+  padding-top:   35px;
   padding-left:  1em !important;
   padding-right: 1em !important;
-  background-size: 100%;
+
   /* Default blue gradient */
   background-image: -webkit-linear-gradient(#57C2F0, #1573B6);
   background-image: linear-gradient(#57C2F0, #1573B6);
-  position: relative;
-  z-index: 100;
+  background-size: 100%;
 }
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+
+  .splash-portal {
+    height: calc(95vh);
+  }
+}
+
+
 
 .splash-portal-heat-warning:before {
   border-radius: inherit;
@@ -72,6 +90,27 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   opacity: 1;
 }
 
+
+/* SPLASH LOGO */
+
+.ui.grid > .row > img.splash-logo,
+.ui.grid > .row > .column > img.splash-logo {
+  margin-top: 7%;
+  width: 80%;
+  max-width: 250px;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+  .ui.grid > .row > img.splash-logo,
+  .ui.grid > .row > .column > img.splash-logo {
+    margin-top: 0;
+  }
+}
+
+
+
 #map {
 	width:  100%;
 	height: 100%;
@@ -85,8 +124,6 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   /*height: calc(75vh);*/
 }
 
-
-/* Small menu for desktop, larger (clickable) on phones */
 
 .ui.fixed.menu.nav {
   height: 35px;
@@ -221,9 +258,9 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   color: #FFF;
 }
 
-.content-preview {
+.ui.grid > .column:not(.row) {
   border-top: 1px gray dotted;
-  padding-top: 40px;
+  padding-top: 3rem;
   text-align: center;
 }
 
@@ -231,11 +268,11 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   border-top: 0;
 }
 
-.content-preview:last {
-  margin-bottom: 85px;
-}
+/*
 
-/*.content-section:nth-child(3n+2) {
+Considered cycling between background colors for content sections.
+
+.content-section:nth-child(3n+2) {
   background: #D84834;
 }
 
@@ -286,12 +323,6 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   text-align: left;
 }
 
-.splash-portal {
-  color: #fff;
-  height: calc(95vh);
-  padding-top: 35px;
-}
-
 .ui.menu {
   border: 0;
 }
@@ -337,6 +368,22 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 
 .splash-grid {
   /*height: 100%;*/
+}
+
+#chevron-container {
+  display: none;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+
+  #chevron-container {
+    display: block;
+    position: absolute;
+    bottom: calc(-3vh);
+    right: 0;
+  }
 }
 
 #splash-input-container {

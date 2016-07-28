@@ -1,6 +1,10 @@
 <ul>
-{{#each nearest as |place|}}
-  <li>{{#link-to 'places.place' place.layer.feature.properties.model_id}}{{place.layer.feature.properties.title}}{{/link-to}}</li>
-{{/each}}
-  </ul>
+  {{#each nearest as |place|}}
+    <li>
+      {{#link-to 'places.place' place.layer.feature.properties.model_id}}
+        {{place.layer.feature.properties.title}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
 {{yield}}

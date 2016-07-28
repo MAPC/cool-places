@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     return this.get('store').findAll('place').then((model) => {
       return model.filter((model) => {
         if (forecast < heat_alert_threshold) {
-          return model.get('first_type') !== 'BCYF Cooling Center' && model.get('first_type') !== 'Cooling Center';  
+          return model.get('first_type') !== 'BCYF Cooling Center' && model.get('first_type') !== 'Cooling Center';
         } else {
           return model;
         }
