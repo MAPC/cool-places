@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   mapRouter: Ember.inject.service(),
   geolocation: Ember.inject.service(),
-  
+
   // userLocation: [42.426092,-70.927705],
   classNames: ['main-content'],
   callOutMarker: function() {
@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
       iconRetinaUrl: 'marker-icon-red.png',
       iconSize: [25, 41]
     });
-    
+
   }.property(),
 
   actions: {
@@ -48,12 +48,12 @@ export default Ember.Controller.extend({
     });
   },
 
-  beach: function() { return this.basicMarkerOptions("Map-icons-50x50-Beach-01.png") }.property(),
-  heat: function() { return this.basicMarkerOptions("Map-icons-50x50-heat-01.png") }.property(),
-  library: function() { return this.basicMarkerOptions("Map-icons-50x50-Library-01.png") }.property(),
-  park: function() { return this.basicMarkerOptions("Map-icons-50x50-park-01.png") }.property(),
-  pool: function() { return this.basicMarkerOptions("Map-icons-50x50-Pool-01.png") }.property(),
+  beach:     function() { return this.basicMarkerOptions("Map-icons-50x50-Beach-01.png") }.property(),
+  heat:      function() { return this.basicMarkerOptions("Map-icons-50x50-heat-01.png") }.property(),
+  library:   function() { return this.basicMarkerOptions("Map-icons-50x50-Library-01.png") }.property(),
+  park:      function() { return this.basicMarkerOptions("Map-icons-50x50-park-01.png") }.property(),
+  pool:      function() { return this.basicMarkerOptions("Map-icons-50x50-Pool-01.png") }.property(),
   sprayDeck: function() { return this.basicMarkerOptions("Map-icons-50x50-SprayDeck-01.png") }.property(),
-  wading: function() { return this.basicMarkerOptions("Map-icons-50x50-Wading-01.png") }.property(),
+  wading:    function() { return this.basicMarkerOptions("Map-icons-50x50-Wading-01.png") }.property(),
   waterPlay: function() { return this.basicMarkerOptions("Map-icons-50x50-WaterPlay-01.png") }.property()
 });
