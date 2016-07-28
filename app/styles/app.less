@@ -1,12 +1,12 @@
 /** reset everything */
 
-html,body {
-	width:100%;
-	height:100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+html, body {
+	width:  100%;
+	height: 100%;
+  margin:   0;
+  padding:  0;
   font-family: 'canada-type-gibson';
+  overflow-x:   hidden;
 }
 
 body {
@@ -248,9 +248,8 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 }*/
 
 @media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
   .content-section {
     scroll-snap-type: mandatory;
   }
@@ -262,6 +261,8 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 .cool-places h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
+
+.ui.text.container { font-family: 'canada-type-gibson'; }
 
 .place-info {
   position: absolute;
@@ -323,13 +324,9 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 .find-places-button {
   background-color: #57C2F0 !important;
   border-radius: 0 !important;
-  color: #fff !important;
+  color: #FFF !important;
   font-weight: 400 !important;
-   letter-spacing: 1px;
-}
-
-.splash-logo {
-  width: 70%;
+  letter-spacing: 1px;
 }
 
 .tagline {
@@ -339,7 +336,18 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 }
 
 .splash-grid {
-  height: 100%;
+  /*height: 100%;*/
+}
+
+#splash-input-container {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.row.splash-input {
+  width: 90%;
+  max-width: 450px;
 }
 
 .menu-item-blue {

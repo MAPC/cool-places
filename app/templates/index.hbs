@@ -3,35 +3,46 @@
   current_temp=model.weather.current_temp
   heat_alert=model.weather.heat_alert
   splash=true}}
-  
+
 <div class="ui vertical masthead center aligned segment">
   {{#splash-weather heat_alert=(gt model.weather.forecast '90')}}
     <div class="ui equal width center aligned padded grid splash-grid">
-      <div class="row">
+      {{!-- <div class="row">
         <div class="column">
-
         </div>
-      </div>
+      </div> --}}
       <div class="row">
         <div class="column">
-          <img src="KeepCool-Splash-Logo-Vertical.png" class="ui centered image splash-logo">
+          <img src="KeepCool-Splash-Logo-Vertical.png" class="ui centered medium image splash-logo">
           <p class="tagline">Find local places to keep cool this summer</p>
         </div>
       </div>
       <div class="row">
         <div class="column">
-          <div class="ui container" style="position: relative; margin-top: 0; margin-bottom: 35px;">
-            <div class="ui two column very relaxed stackable grid">
-              {{#unless geolocation.disabled}}
+
+          <div class="ui text container" id="splash-input-container">
+
+            {{#unless geolocation.disabled}}
+              <div class="row splash-input">
                 <div class="column">
                   {{#link-to 'places.nearby' class="ui fluid button find-places-button"}}
                     <i class="location arrow icon"></i>
                     FIND COOL PLACES
                   {{/link-to}}
                 </div>
-                <div class="ui vertical inverted divider">OR</div>
-              {{/unless}}
-              <div class="center aligned column">
+              </div>
+
+              <div class="row splash-input">
+                <div class="column">
+                  <div class="ui horizontal inverted divider">
+                    OR
+                  </div>
+                </div>
+              </div>
+
+            {{/unless}}
+            <div class="row splash-input">
+              <div class="column">
                 {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
                   <div class="default text">Select an area</div>
                   <i class="dropdown icon"></i>
@@ -45,7 +56,11 @@
                 {{/ui-dropdown}}
               </div>
             </div>
+
           </div>
+
+
+
         </div>
       </div>
     </div>
