@@ -4,7 +4,6 @@
   heat_alert=model.weather.heat_alert
   splash=true}}
 
-{{!-- TODO: Make this full-height on mobile, less on desktop, to show boxes --}}
 <div class="ui vertical masthead center aligned segment">
   {{#splash-weather heat_alert=(gt model.weather.forecast '90')}}
     <div class="ui equal width center aligned padded grid splash-grid">
@@ -71,7 +70,6 @@
   {{/splash-weather}}
 </div>
 
-{{!-- TODO: Make this a stackable grid --}}
 <div class="ui three column padded stackable grid">
   <div class="column content-preview">
     <h3 class="ui header red">Why is it so hot?</h3>
