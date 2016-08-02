@@ -6,8 +6,8 @@ export default Ember.Component.extend(RecognizerMixin, {
   customEvents: {touchend: "click"},
   classNameBindings: ['mini:transparent-nav'],
   actions: {
-    openModal() {
-      this.$('.ui.modal').modal('show');
+    openModal(name) {
+      this.$('.ui.' + name + '.modal').modal('show');
     }
   }
 });

@@ -17,14 +17,20 @@
   {{else}}
     {{#link-to 'index' class="item menu-item-blue mini-logo-menu-item"}}
     {{/link-to}}
+    <a {{action 'openModal' 'legend'}} class="item menu-item-blue">
+      <i class="help large circle outline icon"></i>
+    </a>
+    <a {{action 'openModal' 'learn'}} class="item menu-item-blue">
+      <i class="large book icon"></i>
+    </a>
   {{/if}}
   <div class="right menu">
-    <a {{action 'openModal' on='tap'}} class="item menu-item-blue">
+    <a {{action 'openModal' 'menu'}} class="item menu-item-blue">
       <i class="content layout icon"></i>
     </a>
   </div>
 </div>
-{{#ui-modal name="profile" class="ui basic modal"}}
+{{#ui-modal name="profile" class="ui menu basic modal"}}
   <i class="close icon"></i>
   <div class="ui fluid inverted vertical actions menu">
     {{#link-to 'index' class='cancel item'}}
@@ -44,6 +50,51 @@
     {{/link-to}}
     {{#link-to 'info.about' class='cancel item'}}
       About
+    {{/link-to}}
+  </div>
+{{/ui-modal}}
+
+{{#ui-modal name="profile" class="ui legend basic scrollable modal"}}
+  <i class="close icon"></i>
+  <h2 class="ui header">Legend</h2>
+  <div class="ui list">
+    <div class="item"><img src="Map-icons-50x50-heat-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Emergency Cooling Center</span></div>
+    <div class="item"><img src="Map-icons-50x50-Beach-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Beach</span></div>
+    <div class="item"><img src="Map-icons-50x50-Library-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Library</span></div>
+    <div class="item"><img src="Map-icons-50x50-park-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Park</span></div>
+    <div class="item"><img src="Map-icons-50x50-Pool-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Pool</span></div>
+    <div class="item"><img src="Map-icons-50x50-SprayDeck-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Spray Deck</span></div>
+    <div class="item"><img src="Map-icons-50x50-Wading-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Wading Pool</span></div>
+    <div class="item"><img src="Map-icons-50x50-WaterPlay-01.png" class="ui middle aligned mini image"><span>&nbsp; &nbsp; Water Play</span></div>
+  </div>
+{{/ui-modal}}
+
+{{#ui-modal name="profile" class="ui learn basic modal"}}
+  <i class="close icon"></i>
+  <div class="actions">
+    <h3 class="ui header red">Why is it so hot?</h3>
+    <p>
+      Why does it seem to be getting hotter? Learn the science behind the hot weather.
+    </p>
+    {{#link-to 'info.why-is-it-so-hot' class="cancel item"}}
+      Learn more
+    {{/link-to}}
+
+
+    <h3 class="ui header orange">Stay safe in the high heat!</h3>
+    <p>
+      Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
+    </p>
+    {{#link-to 'info.heat-safety' class="cancel item"}}
+      Stay safe
+    {{/link-to}}
+
+    <h3 class="ui header teal">Resources for keeping cool</h3>
+    <p>
+      Find energy efficiency and air conditioner replacement rebates near you.
+    </p>
+    {{#link-to 'info.resources' class="cancel item"}}
+      Stay cool
     {{/link-to}}
   </div>
 {{/ui-modal}}

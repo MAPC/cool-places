@@ -15,5 +15,10 @@ export default Ember.Route.extend({
           return parseInt(response.current_observation.temp_f);
         })
     });
+  },
+  actions: {
+    back() {
+      history.back();
+    }
   }
 });

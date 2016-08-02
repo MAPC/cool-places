@@ -8,6 +8,8 @@
     </div>
     {{#if model.hours}}
       <p><i class="wait big icon"></i>{{model.hours}}</p>
+    {{else}}
+      <p>Hours Unavailable</p>
     {{/if}}
     {{#if model.phone}}
       <p><a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a></p>
