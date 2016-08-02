@@ -9,7 +9,11 @@ html, body {
 }
 
 body {
-  margin-bottom: 28px;
+  // margin-bottom: 28px;
+}
+
+body > .ember-view {
+  height:100%;
 }
 
 [data-ember-action], a, button, input, .link {
@@ -116,6 +120,10 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 	height: 100%;
 }
 
+.map-container {
+  height: 100%
+}
+
 .leaflet-top {
   margin-top: 70px;
 }
@@ -142,11 +150,12 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   background-color: #000;
   color: #FFF;
 }
-/*
+
 .main-app {
-  padding-top: 22px;
+  // padding-top: 22px;
+  height:100%;
 }
-*/
+
 
 .ui.active.modal {
   height: 100%;
@@ -180,8 +189,8 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 }
 
 .full-height {
-  position: relative;
-  height:   calc(100vh);
+  // position: relative;
+  height:   100%;
 }
 
 /* SCROLL SNAPPING */
