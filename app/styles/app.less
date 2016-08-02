@@ -6,7 +6,6 @@ html, body {
   margin:   0;
   padding:  0;
   font-family: 'canada-type-gibson';
-  overflow-x:   hidden;
 }
 
 body {
@@ -40,7 +39,7 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   color: #FFF;
 
   position: relative;
-  height: calc(65vh);
+  height: 100%;
   z-index: 100;
 
   margin-left:   0 !important;
@@ -62,7 +61,7 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   and (max-device-width: 667px) {
 
   .splash-portal {
-    height: calc(95vh);
+    height: 100%;
   }
 }
 
@@ -188,18 +187,18 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 /* SCROLL SNAPPING */
 
 .scroll-container {
-  display: block;
-  position: fixed;
+  // display: block;
+  // position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   min-width: 100%;
   max-width: 100%;
   padding-bottom: 60px;
-  height: calc(100vh);
-  overflow-y: scroll;
-  scroll-snap-type: none;
-  overflow-x: hidden;
+  height: 100%;
+  // overflow-y: scroll;
+  // scroll-snap-type: none;
+  // overflow-x: hidden;
 }
 
 .nopad {
@@ -226,10 +225,10 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   and (min-device-width: 320px)
   and (max-device-width: 667px) {
 
-  .scroll-container {
-    scroll-snap-points-y: repeat(calc(100vh));
-    scroll-snap-type: none;
-  }
+  // .scroll-container {
+  //   scroll-snap-points-y: repeat(calc(100vh));
+  //   scroll-snap-type: none;
+  // }
 
   .scroll-container h1.ui.header {
     height: 60px;
@@ -322,13 +321,13 @@ Considered cycling between background colors for content sections.
   background: #2EAEC1;
 }*/
 
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 667px) {
-  .content-section {
-    scroll-snap-type: mandatory;
-  }
-}
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 667px) {
+//   .content-section {
+//     scroll-snap-type: mandatory;
+//   }
+// }
 
 /* END SCROLL SNAPPING */
 
