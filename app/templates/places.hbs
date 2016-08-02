@@ -42,6 +42,10 @@
           {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=waterPlay}}
         {{/if}}
 
+        {{#if (eq place.first_type 'Library')}}
+          {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=library}}
+        {{/if}}
+
         {{#if (gt heat_alert heat_alert_threshold)}}
           {{#if (eq place.first_type 'BCYF Cooling Center')}}
             {{marker-layer lat=place.latitude lng=place.longitude onClick=(action 'viewPlace' place) icon=heat}}
