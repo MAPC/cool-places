@@ -7,6 +7,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   geolocation: Ember.inject.service(),
   mapRouter: Ember.inject.service(),
+  userdatacollection: Ember.inject.service(),
 
   nearestMax: 7,
   model(params) {
@@ -14,9 +15,11 @@ export default Ember.Route.extend({
     let mapRouter = this.get('mapRouter');
 
     if(this.get('geolocation.currentLocation')) {
+      console.log("already have location");
       var currentLocation = this.get('geolocation.currentLocation');
     } else {
       var currentLocation = this.get('geolocation').getLocation().then((object) => {
+        this.get('userdatacollection').sendData(object);
       }, (error) => { 
                       console.log(error);
                       alert("Location services disabled"); 
@@ -76,7 +79,6 @@ export default Ember.Route.extend({
 
     return L.featureGroup(markersArray).getBounds();
 
-    // definitely don't use this observer
   },
 
   getNearbyPlaces(geojson) {
