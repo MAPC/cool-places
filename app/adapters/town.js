@@ -1,10 +1,13 @@
 import DS from 'ember-data';
+import config from '../config/environment';
 
 export default DS.CartoDBAdapter.extend({
   accountName: 'mapc-maps',
   tablePrefix: 'heatwaveapp',
   findAll: function(store, type) {
-    var queryTpl = 'SELECT heatwaveapp_towns.name, heatwaveapp_towns.cartodb_id, ST_Simplify(heatwaveapp_towns.the_geom,0.001), heatwaveapp_places.the_geom AS the_geom FROM {{table}}, heatwaveapp_places WHERE ST_Intersects(heatwaveapp_towns.the_geom, heatwaveapp_places.the_geom)',
+    // old query
+    // queryTpl = 'SELECT heatwaveapp_towns.name, heatwaveapp_towns.cartodb_id, ST_Simplify(heatwaveapp_towns.the_geom,0.001), heatwaveapp_places.the_geom AS the_geom FROM {{table}}, heatwaveapp_places WHERE ST_Intersects(heatwaveapp_towns.the_geom, heatwaveapp_places.the_geom)',
+    var queryTpl = "SELECT heatwaveapp_towns.name, heatwaveapp_towns.municipal, heatwaveapp_towns.cartodb_id, ST_Simplify(heatwaveapp_towns.the_geom,0.001), heatwaveapp_places.the_geom AS the_geom FROM {{table}}, heatwaveapp_places WHERE heatwaveapp_towns.municipal IN ('" + config.MMC_towns.join("','") + "')",
         url = this.buildURL(type, queryTpl),
         response = {};
 

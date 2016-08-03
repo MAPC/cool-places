@@ -32,6 +32,8 @@ module.exports = function(environment) {
     network: ['api/'],
     showCreateDate: true
   }
+  // Only these towns will show up in the dropdown. Required.
+  ENV.MMC_towns = ['Boston', 'Cambridge', 'Chelsea', 'Everett', 'Malden', 'Melrose', 'Medford', 'Quincy', 'Revere', 'Somerville', 'Brookline', 'Winthrop', 'Braintree', 'Newton'];
 
 ENV.datacollection = false;
 

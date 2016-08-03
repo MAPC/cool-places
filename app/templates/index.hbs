@@ -41,16 +41,21 @@
 
             <div class="row splash-input">
               <div class="column">
-                {{#ui-dropdown class="inverted fluid large selection" onChange=(action 'toTown')}}
+                {{#ui-dropdown class="small fluid selection optgroup" onChange=(action 'toTown')}}
                   <div class="default text">
                     Select an area
                   </div>
                   <i class="dropdown icon"></i>
                   <div class="menu">
-                  {{#each model.towns as |town|}}
-                    <div class="item" data-id="{{town.name}}">
-                      {{town.name}}
-                    </div>
+                  {{#each grouped as |group|}}
+                    {{#if group.multiple}}
+                      <div class="ui item" data-value="{{group.content.firstObject.name}}">{{group.group}}</div>
+                    {{/if}}
+                    {{#each group.content as |town|}}
+                      <div class="item" data-value="{{town.name}}">
+                        {{town.name}}
+                      </div>
+                    {{/each}}
                   {{/each}}
                   </div>
                 {{/ui-dropdown}}
