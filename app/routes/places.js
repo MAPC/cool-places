@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const heat_alert_threshold = 32;
+const heat_alert_threshold = 90;
 
 export default Ember.Route.extend({
   mapRouter: Ember.inject.service(),
