@@ -6,7 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com http://api.wunderground.com https://api.openweathermap.org",
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com http://api.wunderground.com https://query.yahooapis.com",
                               'img-src': "'self' http://*.basemaps.cartocdn.com/ data: https://p.typekit.net https://api.mapbox.com",
                               'font-src': "'self' data: https://fonts.typekit.net",
                               'style-src': "'self' 'unsafe-inline'",
