@@ -5,7 +5,12 @@ export default Ember.Service.extend({
   ajax: Ember.inject.service(),
   sendData: function(geo_object) {
     console.log(geo_object, config);
-    var sql = "SELECT osm2_upsert_heatwaveapp_userdata(ARRAY[-1], ARRAY['{\"type\":\"Point\",\"coordinates\":[" + geo_object.coords.longitude + "," + geo_object.coords.latitude + "]}'])";
+    var geojson = {
+                      "type":"Point",
+                      "coordinates":[geo_object.coords.longitude,geo_object.coords.latitude] 
+                     };
+
+    var sql = "SELECT osm2_upsert_heatwaveapp_userdata(ARRAY[-1], ARRAY['" + JSON.stringify(geojson) + "'])";
 
     if (config.datacollection) {
       this.get('ajax').request('//mapc-maps.cartodb.com/api/v2/sql',{
