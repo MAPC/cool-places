@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# created 2016-08-03T20:19:43.068Z
+# created 2016-08-03T22:01:29.287Z
 
 CACHE:
-assets/cool-places-cdf2c1d42de3ffcf8e323c0dd7979c94.js
 assets/cool-places-e6efdbce8111fad41a059d699010a658.css
+assets/cool-places-f7f52661560e83fa1a5fce80dc363bb3.js
 assets/images/layers-2x.png
 assets/images/layers.png
 assets/images/marker-icon-2x.png
@@ -16,8 +16,8 @@ assets/themes/default/assets/fonts/icons.ttf
 assets/themes/default/assets/fonts/icons.woff
 assets/themes/default/assets/fonts/icons.woff2
 assets/themes/default/assets/images/flags.png
-assets/vendor-9f6f39618fc43b1b7de322b7a30e58e6.js
-assets/vendor-d82fe49c28f3f0f42225e39d5e6e65ab.css
+assets/vendor-3e43cfc4d46e174d455a056524b1beb2.js
+assets/vendor-a27d681c910caaf82519fce48040b703.css
 content/average-summer-temp-increase-7e8bd3c1fc223c0ddb55b7378e9d6e47.png
 content/ma-map-c9230fa3c093c80675ed4c37ff6dcef7.png
 content/number-hot-days-increase-d8104c1ffa1275ebc0462c5bce320748.png
