@@ -4,7 +4,8 @@
   <div class="ui container place-body">
     <h1>{{model.name}}</h1>
     <p class="light-blue-text">{{model.place_type}} · {{model.address}}</p>
-    <div class="ui divider">
+    <div class="ui inverted horizontal divider">
+      Information
     </div>
     {{#if model.hours}}
       <p><i class="wait big icon"></i>{{model.hours}}</p>
@@ -14,11 +15,66 @@
     {{#if model.phone}}
       <p><a href="tel:{{model.phone}}"><i class="phone big icon"></i>{{model.phone}}</a></p>
     {{/if}}
-    <div class="ui divider">
+    <div class="ui inverted horizontal divider">
+      What's Here?
     </div>
-    <div class="ui list">
+    <div class="ui inverted list">
       {{#each model.place_types as |type|}}
-        <div class="item">{{type}}</div>
+        <div class="item">
+          {{#if (eq type 'Beach')}}
+            <img src="Map-icons-50x50-Beach-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Wading Pool')}}
+            <img src="Map-icons-50x50-Wading-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Pond')}}
+            <img src="Map-icons-50x50-Wading-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Lake')}}
+            <img src="Map-icons-50x50-Wading-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Diving Pool')}}
+            <img src="Map-icons-50x50-Pool-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Swimming Pool')}}
+            <img src="Map-icons-50x50-Pool-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Swimming')}}
+            <img src="Map-icons-50x50-Pool-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Spray Deck')}}
+            <img src="Map-icons-50x50-SprayDeck-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Water Play')}}
+            <img src="Map-icons-50x50-WaterPlay-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Library')}}
+            <img src="Map-icons-50x50-Library-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'BCYF Cooling Center')}}
+            <img src="Map-icons-50x50-heat-01.png" class="ui avatar image">
+          {{/if}}
+
+          {{#if (eq type 'Cooling Center')}}
+            <img src="Map-icons-50x50-heat-01.png" class="ui avatar image">
+          {{/if}}
+
+          <div class="content">
+            <div class="header">
+              {{type}}
+            </div>
+          </div>
+        </div>
       {{/each}}
     </div>
   </div>

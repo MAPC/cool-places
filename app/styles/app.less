@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, a, p {
  font-family: 'canada-type-gibson', 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
 }
 
+h1 {
+  font-weight: 600 !important;
+}
+
 h1.ui.header { font-weight: 600; }
 
 h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
@@ -142,9 +146,7 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
   height: 60px;
 }
 
-.ui.container {
-  margin-top: 35px;
-}
+
 
 .black {
   background-color: #000;
@@ -296,8 +298,6 @@ h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header {
 }
 
 .ui.grid > .column:not(.row) {
-  border-top: 1px gray dotted;
-  padding-top: 1.5rem;
   text-align: center;
 }
 
@@ -351,10 +351,12 @@ Considered cycling between background colors for content sections.
   position: absolute;
   bottom: 0;
   z-index: 101;
+  top: 20%;
   width: 100%;
   background-color: #1573B6;
-  height: 80%;
-  box-shadow: 0px -3px 15px #888
+  height: 100%;
+  box-shadow: 0px -3px 15px #888;
+  padding-top: 35px;
 }
 
 .place-info a {
@@ -482,6 +484,7 @@ Considered cycling between background colors for content sections.
 
 .place-body {
   color: #fff !important;
+  padding-bottom: 60px;
 }
 
 .selection {

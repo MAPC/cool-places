@@ -49,11 +49,16 @@
                   <div class="menu">
                   {{#each grouped as |group|}}
                     {{#if group.multiple}}
-                      <div class="ui item" data-value="{{group.content.firstObject.name}}">{{group.group}}</div>
+                      <div class="ui item" data-value="{{group.content.firstObject.name}}">All {{group.group}}</div>
                     {{/if}}
                     {{#each group.content as |town|}}
                       <div class="item" data-value="{{town.name}}">
-                        {{town.name}}
+                        {{#if group.multiple}}
+                          &nbsp; &middot; {{town.name}}
+                        {{else}}
+                          {{town.name}}
+                        {{/if}}
+                        
                       </div>
                     {{/each}}
                   {{/each}}
@@ -76,7 +81,7 @@
 </div>
 
 <div class="ui three column padded stackable grid">
-  <div class="column content-preview">
+  <div class="column">
     <h3 class="ui header red">Why is it so hot?</h3>
     <p>
       Why does it seem to be getting hotter? Learn the science behind the hot weather.
@@ -88,9 +93,7 @@
     </div>
   </div>
 
-  <div class="ui vertical divider"></div>
-
-  <div class="column content-preview">
+  <div class="column">
     <h3 class="ui header orange">Stay safe in the high heat!</h3>
     <p>
       Learn the signs and symptoms of heatstroke, and know how to best prepare for extremely hot days.
@@ -102,9 +105,7 @@
     </div>
   </div>
 
-  <div class="ui vertical divider"></div>
-
-  <div class="column content-preview">
+  <div class="column ">
     <h3 class="ui header teal">Resources for keeping cool</h3>
     <p>
       Find energy efficiency and air conditioner replacement rebates near you.
