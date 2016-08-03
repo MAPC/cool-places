@@ -33,6 +33,8 @@ module.exports = function(environment) {
     showCreateDate: true
   }
 
+ENV.datacollection = false;
+
  ENV.typekit = {
       kitId: 'brw3zbp'
   }
@@ -59,6 +61,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.baseURL = '/cool-places/';
+    ENV.datacollection = true;
 
   }
 
