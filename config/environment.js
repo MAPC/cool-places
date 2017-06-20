@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com http://*.cartodb.com http://*.basemaps.cartocdn.com http://api.wunderground.com https://query.yahooapis.com",
                               'img-src': "'self' http://*.basemaps.cartocdn.com/ data: https://p.typekit.net https://api.mapbox.com",
-                              'font-src': "'self' data: https://fonts.typekit.net",
+                              'font-src': "'self' data: https://fonts.typekit.net data: https://use.typekit.net",
                               'style-src': "'self' 'unsafe-inline'",
                               'script-src': "'self' 'unsafe-eval' 'unsafe-inline' localhost:49152 0.0.0.0:49152 http://use.typekit.net https://use.typekit.net" },
     EmberENV: {
