@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# created 2016-08-08T18:51:54.842Z
+# created 2017-06-20T15:24:49.421Z
 
 CACHE:
-assets/cool-places-816b7ebbfbc14773f98d13c8fa6ea607.js
+assets/cool-places-97006f8705bdd2298b870b841f8e21a3.js
 assets/cool-places-e6efdbce8111fad41a059d699010a658.css
 assets/images/layers-2x.png
 assets/images/layers.png
@@ -16,8 +16,8 @@ assets/themes/default/assets/fonts/icons.ttf
 assets/themes/default/assets/fonts/icons.woff
 assets/themes/default/assets/fonts/icons.woff2
 assets/themes/default/assets/images/flags.png
-assets/vendor-3e43cfc4d46e174d455a056524b1beb2.js
-assets/vendor-a27d681c910caaf82519fce48040b703.css
+assets/vendor-171a4330afc2a6fa326014e995b012fd.js
+assets/vendor-f8a15d2ee0f69378731d277706ad260a.css
 content/average-summer-temp-increase-7e8bd3c1fc223c0ddb55b7378e9d6e47.png
 content/ma-map-c9230fa3c093c80675ed4c37ff6dcef7.png
 content/number-hot-days-increase-d8104c1ffa1275ebc0462c5bce320748.png
@@ -28,7 +28,7 @@ Home-icon-01-30e8079d970bb0aa1b2cf60abec3790f.png
 KeepCool-Icon-Logo-09ff200c058ee4a2aff230670658eaca.png
 KeepCool-Splash-Logo-3ac2220fe3014d207c6e99ad0dd7b64d.png
 KeepCool-Splash-Logo-Vertical-867df3c8cd286458bacdd109cc31c22f.png
-leaflet-knn.min-1c4d54b403cd786a57605c6c25f8faaf.js
+leaflet-knn.min-ce5fb02d58914f666fefb719a4ca1871.js
 Map-icons-100x100-Heat-32970d688a107d8f06bd9275cb9682cc.png
 Map-icons-50x50-Beach-01-788a8b0b493dc822952a341c2d17d680.png
 Map-icons-50x50-heat-01-64f3c1121d36c407560690ce84e7f635.png
