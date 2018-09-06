@@ -14,7 +14,7 @@
     "qunit": "~1.20.0",
     "leaflet": "~0.7.7",
     "ember-cartodb-adapter": "git://github.com/allthesignals/ember-cartodb-adapter#master",
-    "semantic-ui": "^2.2.2",
+    "semantic-ui": "^2.3.3",
     "leaflet.markercluster": "~0.5.0",
     "hammer.js": "2.0.6"
   },
